@@ -11,6 +11,7 @@
 1. git status (untuk mencek apa ada merah-merah/belum pindah ke staging area)
 2. jika iya, ketik: git add .
 3. git commit -m "mengerjakan video #xxx" (#xxx diberi nomor sesuai nomor video)
+4. Git push
 
 
 === CARA MENGAMBIL UPDATE COMMIT REPO YANG BARU ===
