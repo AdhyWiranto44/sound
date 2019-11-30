@@ -4,7 +4,7 @@
 3. masuk ke folder tubesrekweb
 4. klik kanan Git Bash Here
 5. git clone https://github.com/AdhyWiranto44/sound.git
-6. terakhir cek apakah repo sudah ada foldernya(otomatis ter-init)
+6. cek apakah repo sudah ada foldernya(otomatis ter-init)
 
 
 === CARA COMMIT DAN PUSH KE GITHUB ===
