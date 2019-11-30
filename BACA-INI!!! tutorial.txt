@@ -1,0 +1,24 @@
+=== CARA CLONING ===
+1. masuk ke folder htdocs
+2. buat folder tubesrekweb
+3. masuk ke folder tubesrekweb
+4. klik kanan Git Bash Here
+5. git clone https://github.com/AdhyWiranto44/sound.git
+6. terakhir cek apakah repo sudah ada foldernya(otomatis ter-init)
+
+
+=== CARA COMMIT DAN PUSH KE GITHUB ===
+1. git status (untuk mencek apa ada merah-merah/belum pindah ke staging area)
+2. jika iya, ketik: git add .
+3. git commit -m "mengerjakan video #xxx" (#xxx diberi nomor sesuai nomor video)
+
+
+=== CARA MENGAMBIL UPDATE COMMIT REPO YANG BARU ===
+1. buka repo di htdocs
+2. klik kanan Git Bash Here
+3. git pull
+4. cek perubahannya di code editor masing-masing
+
+
+[NOTE: JANGAN LUPA DATABASE SELALU DI-EXPORT KE REPONYA]
+[NOTE2: DAN KALAU ADA COMMIT BARU DARI ANGGOTA LAIN, PASTIKAN DATABASE JUGA SELALU DI-IMPORT AGAR ISI DATANYA SELALU UPDATE]
