@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "bebasneue";
+  src: url('../fonts/BebasNeue Bold.ttf');
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+* {
+  font-family: bebasneue;
+  font-size: 17px;
+}
+
+p {
+  font-family: roboto;
+}
