@@ -28,6 +28,9 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Change Password</button>
                 </div>
+                <div class="form-group">
+                    <a href="<?= base_url('user/resetpassword'); ?>"><span class="badge badge-warning">Forgot? Reset Password.</span></a>
+                </div>
             </form>
         </div>
     </div>

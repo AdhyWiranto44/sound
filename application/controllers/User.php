@@ -115,4 +115,25 @@ class User extends CI_Controller
             }
         }
     }
+
+    public function resetpassword()
+    {
+        // ambil data user
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $default_password = '12345';
+
+        $password_hash = password_hash($default_password, PASSWORD_DEFAULT);
+
+        $this->db->set('password', $password_hash);
+        $this->db->where('email', $this->session->userdata('email'));
+        $this->db->update('user');
+
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password telah di reset ke 12345, silahkan login kembali.</div>');
+
+        redirect('auth');
+    }
 }
