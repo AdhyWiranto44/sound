@@ -52,7 +52,7 @@
                 <?php else : ?>
                 <li class="nav-item">
                 <?php endif; ?>
-                <a class="nav-link pb-0" href="<?= $sm['url']; ?>">
+                <a class="nav-link pb-0" href="<?= base_url() . $sm['url']; ?>">
                     <i class="<?= $sm['icon']; ?>"></i>
                     <span><?= $sm['title']; ?></span></a>
                 </li>

@@ -22,3 +22,21 @@ function is_logged_in()
     }
   }
 }
+
+function check_access($role_id, $menu_id)
+{
+  $ci = get_instance();
+
+  $result = $ci->db->get_where('user_access_menu', [
+    'role_id' => $role_id,
+    'menu_id' => $menu_id
+  ]);
+
+  // $ci->db->where('role_id', $role_id);
+  // $ci->db->where('menu_id', $menu_id);
+  // $result
+
+  if ($result->num_rows() > 0) {
+    return "checked='checked'";
+  }
+}
