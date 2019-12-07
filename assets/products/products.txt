@@ -1,5 +1,33 @@
 HEADPHONE
 
+Gambar : h1.jpg
+Nama : Beats Studio 3 Wireless
+Harga : 3.912.000
+Merk : Beats
+
+
+Gambar : h2.jpg
+Nama : Beast Solo Pro Wireless
+Harga : 4.193.146
+Merk : Beats
+
+
+Gambar : h3.jpg
+Nama : SBH-503 Bluetooth Stereo
+Harga : 210.000
+Merk : Samsung
+
+Gambar : h4.jpg
+Nama : MDR-XB450AP Stereo
+Harga : 130.000
+Merk : Sony
+
+Gambar : h5.jpg
+Nama : Extra Bass MDR-XB450AP
+Harga :699.000
+Merk : Sony
+
+
 
 EARPHONE
 1.
