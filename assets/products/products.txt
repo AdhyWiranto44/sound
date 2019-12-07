@@ -1,0 +1,43 @@
+HEADPHONE
+
+
+EARPHONE
+
+
+
+
+
+6. 
+gambar: e6.jpg
+nama: Samsung Galaxy Earbuds
+merk: Samsung
+harga: 1899000
+tipe: earphone
+
+7.
+gambar: e7.jpg
+nama: JBL C230 TWS Bluetooth Earphone
+merk: JBL
+harga: 238000
+tipe: earphone
+
+8.
+gambar: e8.jpg
+nama: Mi Airdots
+merk: Xiaomi
+harga: 205000
+tipe: earphone
+
+9.
+gambar: e9.jpg
+nama: Apple Airpods 2
+merk: Apple
+harga: 2300000
+tipe: earphone
+
+10.
+gambar: e10.jpg
+nama: Sony MDR-EX155AP/B
+merk: Sony
+harga: 219000
+tipe: earphone
