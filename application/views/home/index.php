@@ -25,10 +25,11 @@
   </div>
   <!-- end of Jumbotron -->
 
-  <div class="row mt-4 mb-5">
+  <!-- Banner -->
+  <div class="row my-4">
     <div class="col-sm mb-3">
-      <div class="card text-white">
-        <img class="card-img imgredup" src="<?= base_url('assets/img/banner/'); ?>headphones.png" alt="">
+      <div class="card text-white rounded-0 border-0">
+        <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>headphones.png" alt="">
         <div class="card-img-overlay">
           <h4 class="card-title">Headphones</h4>
           <p class="card-text">Enjoy your creativity</p>
@@ -37,8 +38,8 @@
       </div>
     </div>
     <div class="col-sm mb-3">
-      <div class="card text-white">
-        <img class="card-img imgredup" src="<?= base_url('assets/img/banner/'); ?>earphones.png" alt="">
+      <div class="card text-white rounded-0 border-0">
+        <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>earphones.png" alt="">
         <div class="card-img-overlay">
           <h4 class="card-title">Earphones</h4>
           <p class="card-text">Just chill</p>
@@ -47,8 +48,8 @@
       </div>
     </div>
     <div class="col-sm mb-3">
-      <div class="card text-white">
-        <img class="card-img imgredup" src="<?= base_url('assets/img/banner/'); ?>brands.png" alt="">
+      <div class="card text-white rounded-0 border-0">
+        <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>brands.png" alt="">
         <div class="card-img-overlay">
           <h4 class="card-title">Brands</h4>
           <p class="card-text">Find your favorite brand</p>
@@ -56,8 +57,66 @@
         </div>
       </div>
     </div>
+  </div>
+  <!-- end of Banner -->
+
+  <!-- Featured -->
+  <h5 class="d-inline">Featured Products</h5>
+  <div class="row mt-2">
+    <div class="col-sm-3 mb-2">
+      <div class="card rounded-0">
+        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Beats Studio 3 Wireless</h5>
+          <p class="card-text">Rp 3912000</p>
+          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
+          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-2">
+      <div class="card rounded-0">
+        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Beats Studio 3 Wireless</h5>
+          <p class="card-text">Rp 3912000</p>
+          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
+          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-2">
+      <div class="card rounded-0">
+        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Beats Studio 3 Wireless</h5>
+          <p class="card-text">Rp 3912000</p>
+          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
+          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-2">
+      <div class="card rounded-0">
+        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Beats Studio 3 Wireless</h5>
+          <p class="card-text">Rp 3912000</p>
+          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
+          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 
+  <div class="row mb-3">
+    <div class="col-sm">
+      <a class="text-dark" href="<?= base_url('products/showAll'); ?>">
+        <p class="d-inline">see more ></p>
+      </a>
+    </div>
+  </div>
+  <!-- end of Featured -->
 
 </div>

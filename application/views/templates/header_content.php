@@ -16,6 +16,21 @@
     .imgredup {
       filter: brightness(50%);
     }
+
+    .carousel-indicators {
+      opacity: 0;
+      transition: .3s;
+    }
+
+    .carousel-indicators:hover {
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .customMargin {
+        margin-left: -120px;
+      }
+    }
   </style>
 
   <title>soUnd</title>
