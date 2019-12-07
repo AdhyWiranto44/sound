@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2019 pada 15.12
+-- Waktu pembuatan: 07 Des 2019 pada 15.40
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.7
 
@@ -63,7 +63,17 @@ INSERT INTO `headset` (`id_headset`, `nama_produk`, `merk_produk`, `harga_produk
 (7, 'JBL C230 TWS Bluetooth Earphone', 'JBL', 238000, 'Earphone', 'e7.jpg'),
 (8, 'Mi Airdots', 'Xiaomi', 205000, 'Earphone', 'e8.jpg'),
 (9, 'Apple Airpods 2', 'Apple', 2300000, 'Earphone', 'e9.jpg'),
-(10, 'Sony MDR-EX155AP/B', 'Sony', 219000, 'Earphone', 'e10.jpg');
+(10, 'Sony MDR-EX155AP/B', 'Sony', 219000, 'Earphone', 'e10.jpg'),
+(11, 'Beats Studio 3 Wireless', 'Beats', 3912000, 'Headphone', 'h1.jpg'),
+(12, 'Beast Solo Pro Wireless', 'Beats', 4193146, 'Headphone', 'h2.jpg'),
+(13, 'SBH-503 Bluetooth Stereo', 'Samsung', 210000, 'Headphone', 'h3.jpg'),
+(14, 'MDR-XB450AP Stereo', 'Sony', 130000, 'Headphone', 'h4.jpg'),
+(15, 'Extra Bass MDR-XB450AP', 'Sony', 699000, 'Headphone', 'h5.jpg'),
+(16, 'Sennheiser HD 4.30i', 'Sennheiser', 600000, 'Headphone', 'h6.jpg'),
+(17, 'Sony MDR-1ADAC', 'Sony', 800000, 'Headphone', 'h7.jpg'),
+(18, 'Bose SoundLink Around', 'Bose', 750000, 'Headphone', 'h8.jpg'),
+(19, 'JBL JR300BT', 'JBL', 870000, 'Headphone', 'h9.jpg'),
+(20, 'JBL E55BT', 'JBL', 520000, 'Headphone', 'h10.jpg');
 
 -- --------------------------------------------------------
 
@@ -267,7 +277,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT untuk tabel `headset`
 --
 ALTER TABLE `headset`
-  MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`

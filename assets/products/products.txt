@@ -1,4 +1,4 @@
-HEADPHONE
+------HEADPHONE---------
 
 1.
 Gambar : h1.jpg
@@ -70,7 +70,7 @@ merk : JBL
 harga : 520000
 tipe : headphone
 
-EARPHONE
+------EARPHONE-------
 
 1.
 nama: samsung gear icon X
