@@ -28,6 +28,8 @@ class Auth extends CI_Controller
       // validation success
       $this->_login();
     }
+
+    
   }
 
 
