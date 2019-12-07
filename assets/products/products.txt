@@ -1,35 +1,77 @@
 HEADPHONE
 
+1.
 Gambar : h1.jpg
 Nama : Beats Studio 3 Wireless
 Harga : 3.912.000
 Merk : Beats
+tipe : headphone
 
-
+2.
 Gambar : h2.jpg
 Nama : Beast Solo Pro Wireless
 Harga : 4.193.146
 Merk : Beats
+tipe : headphone
 
-
+3.
 Gambar : h3.jpg
 Nama : SBH-503 Bluetooth Stereo
 Harga : 210.000
 Merk : Samsung
+tipe : headphone
 
+4.
 Gambar : h4.jpg
 Nama : MDR-XB450AP Stereo
 Harga : 130.000
 Merk : Sony
+tipe : headphone
 
+5.
 Gambar : h5.jpg
 Nama : Extra Bass MDR-XB450AP
 Harga :699.000
 Merk : Sony
+tipe : headphone
 
+6.
+gambar : h6.jpg
+nama : Sennheiser HD 4.30i
+merk : Sennheiser
+harga : 600000
+tipe : headphone
 
+7.
+gambar : h7.jpg
+nama : Sony MDR-1ADAC
+merk : Sony
+harga : 800000
+tipe : headphone
+
+8.
+gambar : h8.jpg
+nama : Bose SoundLink Around
+merk : Bose
+harga : 750000
+tipe : headphone
+
+9.
+gambar : h9.jpg
+nama : JBL JR300BT
+merk : JBL
+harga : 870000
+tipe : headphone
+
+10.
+gambar : h10.jpg
+nama : JBL E55BT
+merk : JBL
+harga : 520000
+tipe : headphone
 
 EARPHONE
+
 1.
 nama: samsung gear icon X
 merk : samsung
