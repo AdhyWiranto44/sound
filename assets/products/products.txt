@@ -2,10 +2,40 @@ HEADPHONE
 
 
 EARPHONE
+1.
+nama: samsung gear icon X
+merk : samsung
+harga : 275000
+tipe : earphone
+gambar : e1.jpg
 
+2.
+nama : SONY MDR-XB50BS Black
+merk : sony
+harga : 500000
+tipe : earphone
+gambar : e2.jpg
 
+3.
+nama : eaphone AKG
+merk : AKG
+harga : 100000
+tipe : earphone
+gambar : e3.jpg
 
+4.
+nama : sport stereo
+merk : sony
+harga : 700000
+tipe : eaphone
+gambar :e4.jpg
 
+5.
+nama : powerbeats pro
+merk : beats
+harga : 2000000
+tipe : eaphone
+gambar : e5.jpg
 
 6. 
 gambar: e6.jpg
