@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2019 pada 05.41
+-- Waktu pembuatan: 07 Des 2019 pada 15.12
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.7
 
@@ -54,8 +54,16 @@ CREATE TABLE `headset` (
 --
 
 INSERT INTO `headset` (`id_headset`, `nama_produk`, `merk_produk`, `harga_produk`, `tipe_produk`, `gambar_produk`) VALUES
-(1, 'aaaa', 'iphone', 50000, 'earphone', 'aa.jpg'),
-(2, 'bbbb', 'samsung', 40000, 'headphone', 'bb.jpg');
+(1, 'Samsung Gear Icon X', 'Samsung', 600000, 'Earphone', 'e1.jpg'),
+(2, 'Sony MDR-XB50BS Black', 'Sony', 500000, 'Earphone', 'e2.jpg'),
+(3, 'AKG Earphone', 'AKG', 1000000, 'Earphone', 'e3.jpg'),
+(4, 'Sport Stereo', 'Sony', 700000, 'Earphone', 'e4.jpg'),
+(5, 'Powerbeats Pro', 'Beats', 2000000, 'Earphone', 'e5.jpg'),
+(6, 'Samsung Galaxy Earbuds', 'Samsung', 1899000, 'Earphone', 'e6.jpg'),
+(7, 'JBL C230 TWS Bluetooth Earphone', 'JBL', 238000, 'Earphone', 'e7.jpg'),
+(8, 'Mi Airdots', 'Xiaomi', 205000, 'Earphone', 'e8.jpg'),
+(9, 'Apple Airpods 2', 'Apple', 2300000, 'Earphone', 'e9.jpg'),
+(10, 'Sony MDR-EX155AP/B', 'Sony', 219000, 'Earphone', 'e10.jpg');
 
 -- --------------------------------------------------------
 
@@ -259,7 +267,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT untuk tabel `headset`
 --
 ALTER TABLE `headset`
-  MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`
