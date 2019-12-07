@@ -53,9 +53,7 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <a href="http://bukalapak.com">
-                <img src="<?= base_url('assets/img/carousel/1.png'); ?>" class="d-block w-100">
-              </a>
+              <img src="<?= base_url('assets/img/carousel/1.png'); ?>" class="d-block w-100">
             </div>
             <div class="carousel-item">
               <img src="<?= base_url('assets/img/carousel/2.png'); ?>" class="d-block w-100">
