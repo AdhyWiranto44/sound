@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="col-6 mt-3 mx-auto">
+    <?= $this->session->flashdata('message'); ?>
+  </div>
+</div>
+
 <div class="container">
 
   <!-- Jumbotron -->
@@ -74,40 +80,6 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3 mb-2">
-      <div class="card rounded-0">
-        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Beats Studio 3 Wireless</h5>
-          <p class="card-text">Rp 3912000</p>
-          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3 mb-2">
-      <div class="card rounded-0">
-        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Beats Studio 3 Wireless</h5>
-          <p class="card-text">Rp 3912000</p>
-          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3 mb-2">
-      <div class="card rounded-0">
-        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Beats Studio 3 Wireless</h5>
-          <p class="card-text">Rp 3912000</p>
-          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <div class="row mb-3">
