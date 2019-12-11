@@ -50,7 +50,7 @@ class Products extends CI_Controller
 
    public function detailProduct($id)
    {
-      $data['judul'] = 'Detail Produk';
+      $data['title'] = 'Detail Produk';
       $data['detail'] = $this->Products_model->getProductById($id);
 
       $this->load->view('templates/header_content', $data);
