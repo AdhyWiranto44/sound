@@ -13,4 +13,16 @@ class Products_model extends CI_Model
 
 		return $this->db->query($query)->result_array();
 	}
+
+	public function getHeadphones()
+	{
+		$query = "SELECT * FROM headset
+					WHERE tipe_produk = 'Headphone'";
+
+		return $this->db->query($query)->result_array();
+	}
+
+	public function getProductById($id) {
+		return $this->db->get_where('headset', ['id_headset' => $id ])->row_array();
+	}
 }
