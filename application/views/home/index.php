@@ -48,7 +48,7 @@
         <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>earphones.png" alt="">
         <div class="card-img-overlay">
           <h4 class="card-title">Earphones</h4>
-          <p class="card-text">Just chill</p>
+          <p class="card-text">Just chillin'</p>
           <a class="text-white" href="<?= base_url('products/showEarphones'); ?>">more ></a>
         </div>
       </div>

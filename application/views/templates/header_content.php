@@ -33,7 +33,7 @@
     }
   </style>
 
-  <title>soUnd</title>
+  <title><?= $title; ?></title>
 </head>
 
 <body>
