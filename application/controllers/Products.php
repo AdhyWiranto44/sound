@@ -7,6 +7,7 @@ class Products extends CI_Controller
    {
       parent::__construct();
       $this->load->model('Products_model');
+
    }
 
    public function showHeadphones()
@@ -52,6 +53,7 @@ class Products extends CI_Controller
    {
       $data['title'] = 'Detail Produk';
       $data['detail'] = $this->Products_model->getProductById($id);
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);

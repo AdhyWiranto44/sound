@@ -14,11 +14,19 @@ class Transaction extends CI_Controller
     {
     	$data['title'] = 'Buy';
     	$data['detail'] = $this->Products_model->getProductById($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     	
-        $this->load->view('templates/header_content', $data);
-        $this->load->view('templates/navbar_content', $data);
-        $this->load->view('transactions/buy');
-        $this->load->view('templates/footer_content');     
+        if (!$this->session->userdata('email')) {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login dahulu sebelum membeli. :)</div>');
+          redirect('auth');
+        } else {
+            $this->load->view('templates/header_content', $data);
+            $this->load->view('templates/navbar_content', $data);
+            $this->load->view('transactions/buy');
+            $this->load->view('templates/footer_content'); 
+        }
+
+             
     }
 
     public function konfirmasiPesanan()
