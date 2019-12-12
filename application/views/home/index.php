@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style="margin-top: 50px;">
   <div class="col-6 mt-3 mx-auto">
     <?= $this->session->flashdata('message'); ?>
   </div>
