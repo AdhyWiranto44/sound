@@ -7,7 +7,6 @@ class Products extends CI_Controller
    {
       parent::__construct();
       $this->load->model('Products_model');
-
    }
 
    public function showHeadphones()
@@ -59,5 +58,31 @@ class Products extends CI_Controller
       $this->load->view('templates/navbar_content', $data);
       $this->load->view('products/detail', $data);
       $this->load->view('templates/footer_content');
+   }
+
+   public function dataHeadphones()
+   {
+      $data['title'] = 'Data Produk';
+      $data['barang'] = $this->Products_model->getHeadphones();
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('products/dataHeadphones', $data);
+      $this->load->view('templates/footer');
+   }
+
+   public function dataEarphones()
+   {
+      $data['title'] = 'Data Produk';
+      $data['barang'] = $this->Products_model->getEarphones();
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('products/dataEarphones', $data);
+      $this->load->view('templates/footer');
    }
 }
