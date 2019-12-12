@@ -21,3 +21,8 @@
 </head>
 
 <body class="bg-gradient-primary">
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-white">
+  <a class="navbar-brand mx-auto" href="<?= base_url('home') ?>">
+    <img src="<?= base_url('assets/img/logo/') ?>logo2.png" style="height: 30px;">
+  </a>
+</nav>
