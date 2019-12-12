@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2019 at 09:33 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Waktu pembuatan: 12 Des 2019 pada 17.27
+-- Versi server: 10.3.16-MariaDB
+-- Versi PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Struktur dari tabel `cart`
 --
 
 CREATE TABLE `cart` (
@@ -37,7 +37,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `headset`
+-- Struktur dari tabel `headset`
 --
 
 CREATE TABLE `headset` (
@@ -50,7 +50,7 @@ CREATE TABLE `headset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `headset`
+-- Dumping data untuk tabel `headset`
 --
 
 INSERT INTO `headset` (`id_headset`, `nama_produk`, `merk_produk`, `harga_produk`, `tipe_produk`, `gambar_produk`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `headset` (`id_headset`, `nama_produk`, `merk_produk`, `harga_produk
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Struktur dari tabel `pesanan`
 --
 
 CREATE TABLE `pesanan` (
@@ -93,7 +93,7 @@ CREATE TABLE `pesanan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -108,7 +108,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
@@ -117,13 +117,12 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (4, 'Adhy', 'adhywiranto68@gmail.com', 'default.jpg', '$2y$10$xWwvkq8b3m6LuzX2B5qU6OFwQXv0K9n3dmW.mJlQKnnWOKYV3ryyi', 2, 1, 1575092497),
 (5, 'Adhy Wiranto Sudjana', 'adhy_173040038@mail.unpas.ac.id', 'default.jpg', '$2y$10$aXWEO3ansueleItXTcFxj.OKkXey1VPHxHO3NhMDeRdAP0Vrp0nVe', 1, 1, 1575281301),
 (6, 'Admin', 'admin@gmail.com', 'default.jpg', '$2y$10$vI0iu38lpDDitUUG.2dFbOc3FqC//jX9P95soyeAOdySrRNq4xM.K', 1, 1, 1575524889),
-(7, 'User', 'user@gmail.com', 'default.jpg', '$2y$10$Av72K8lKyt2S37JZtdScDezjraR99K.c/d2twoY7Bx1x390unBLqK', 2, 1, 1575524951),
-(8, 'Rico Aristama', 'rarisitama@gmail.com', 'default.jpg', '$2y$10$yNgoXfX0fjb55u1NXRfEWOyOaHVYgIlitPW/YPSkBIPUC/SARcLEu', 2, 1, 1575791996);
+(7, 'User', 'user@gmail.com', 'default.jpg', '$2y$10$Av72K8lKyt2S37JZtdScDezjraR99K.c/d2twoY7Bx1x390unBLqK', 2, 1, 1575524951);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
@@ -133,19 +132,20 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 2),
-(4, 1, 3);
+(4, 1, 3),
+(8, 1, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
 CREATE TABLE `user_menu` (
@@ -154,18 +154,19 @@ CREATE TABLE `user_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (2, 'User'),
-(3, 'Menu');
+(3, 'Menu'),
+(5, 'Products');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -174,7 +175,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -184,7 +185,7 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -197,7 +198,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
@@ -207,27 +208,29 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
 (5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
 (6, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-tie', 1),
-(7, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1);
+(7, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
+(8, 5, 'Headphones', 'Products/dataHeadphones', 'fas fa-headphones-alt', 1),
+(9, 5, 'Earphones', 'Products/dataEarphones', 'fas fa-music', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cart`
+-- Indeks untuk tabel `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`),
   ADD KEY `id_headset` (`id_headset`);
 
 --
--- Indexes for table `headset`
+-- Indeks untuk tabel `headset`
 --
 ALTER TABLE `headset`
   ADD PRIMARY KEY (`id_headset`);
 
 --
--- Indexes for table `pesanan`
+-- Indeks untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id_pesanan`),
@@ -235,99 +238,99 @@ ALTER TABLE `pesanan`
   ADD KEY `id_cart` (`id_cart`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
   MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `headset`
+-- AUTO_INCREMENT untuk tabel `headset`
 --
 ALTER TABLE `headset`
   MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `pesanan`
+-- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `cart`
+-- Ketidakleluasaan untuk tabel `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_headset`) REFERENCES `headset` (`id_headset`);
 
 --
--- Constraints for table `pesanan`
+-- Ketidakleluasaan untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
