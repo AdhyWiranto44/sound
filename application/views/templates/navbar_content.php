@@ -7,9 +7,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mx-auto">
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/showHeadphones'); ?>">Headphones</a>
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/showEarphones'); ?>">Earphones</a>
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/showBrands'); ?>">Brands</a>
+      <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
+      <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
+      <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a>
       <a class="nav-item nav-link mr-3" href="#">About</a>
       <a class="nav-item nav-link" href="#">Contact us</a>
     </div>
@@ -22,6 +22,8 @@
         </button>
         <div class="dropdown-menu customMargin">
           <a href="<?= base_url('user'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Profile</a>
+          <hr class="border">
+          <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">Pesanan</a>
           <hr class="border">
           <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>
         </div>

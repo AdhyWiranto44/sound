@@ -10,21 +10,15 @@ class Transaction extends CI_Controller
 		$this->load->model('Products_model');
 	}
 
-    public function Pesanan($id)
+    public function pesanan()
     {
     	$data['title'] = 'Buy';
-    	$data['detail'] = $this->Products_model->getProductById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    	
-        if (!$this->session->userdata('email')) {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login dahulu sebelum membeli. :)</div>');
-          redirect('auth');
-        } else {
-            $this->load->view('templates/header_content', $data);
-            $this->load->view('templates/navbar_content', $data);
-            $this->load->view('transactions/buy');
-            $this->load->view('templates/footer_content'); 
-        }
+
+        $this->load->view('templates/header_content', $data);
+        $this->load->view('templates/navbar_content', $data);
+        $this->load->view('transactions/buy');
+        $this->load->view('templates/footer_content');
 
              
     }
@@ -32,5 +26,23 @@ class Transaction extends CI_Controller
     public function konfirmasiPesanan()
     {
     	
+    }
+
+    public function addToCart($id)
+    {
+        if (!$this->session->userdata('email')) {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login dahulu sebelum membeli. :)</div>');
+            redirect('auth');
+        } else {
+            $data = [
+            'id_cart' => '',
+            'id_headset' => $id,
+            'quantity' => 1
+            ];
+
+            $this->db->insert('cart', $data);
+
+            redirect('transaction/pesanan');
+        }
     }
 }
