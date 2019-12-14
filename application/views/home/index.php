@@ -73,7 +73,7 @@
   <!-- end of Banner -->
 
   <!-- Featured -->
-  <h5 class="d-inline">Featured Products</h5>
+  <!-- <h5 class="d-inline">Featured Products</h5>
   <div class="row mt-2">
     <div class="col-sm-3 mb-2">
       <div class="card rounded-0">
@@ -94,7 +94,7 @@
         <p class="d-inline">see more ></p>
       </a>
     </div>
-  </div>
+  </div> -->
   <!-- end of Featured -->
 
 </div>
