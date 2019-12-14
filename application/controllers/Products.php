@@ -9,7 +9,7 @@ class Products extends CI_Controller
       $this->load->model('Products_model');
    }
 
-   public function showHeadphones()
+   public function headphones()
    {
       $data['title'] = 'Headphones';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -23,7 +23,7 @@ class Products extends CI_Controller
       $this->load->view('templates/footer_content');
    }
 
-   public function showEarphones()
+   public function earphones()
    {
       $data['title'] = 'Earphones';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -37,7 +37,7 @@ class Products extends CI_Controller
       $this->load->view('templates/footer_content');
    }
 
-   public function showBrands()
+   public function brands()
    {
       $data['title'] = 'Brands';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -48,9 +48,9 @@ class Products extends CI_Controller
       $this->load->view('templates/footer_content');
    }
 
-   public function detailProduct($id)
+   public function detail($id)
    {
-      $data['title'] = 'Detail Produk';
+      $data['title'] = 'Detail';
       $data['detail'] = $this->Products_model->getProductById($id);
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
@@ -62,6 +62,7 @@ class Products extends CI_Controller
 
    public function dataHeadphones()
    {
+      is_logged_in();
       $data['title'] = 'Data Produk';
       $data['barang'] = $this->Products_model->getHeadphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -75,6 +76,7 @@ class Products extends CI_Controller
 
    public function dataEarphones()
    {
+      is_logged_in();
       $data['title'] = 'Data Produk';
       $data['barang'] = $this->Products_model->getEarphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
