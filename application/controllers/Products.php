@@ -63,7 +63,7 @@ class Products extends CI_Controller
    public function dataHeadphones()
    {
       is_logged_in();
-      $data['title'] = 'Data Produk';
+      $data['title'] = 'Data Headphones';
       $data['barang'] = $this->Products_model->getHeadphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
@@ -77,7 +77,7 @@ class Products extends CI_Controller
    public function dataEarphones()
    {
       is_logged_in();
-      $data['title'] = 'Data Produk';
+      $data['title'] = 'Data Earphones';
       $data['barang'] = $this->Products_model->getEarphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 

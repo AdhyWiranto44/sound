@@ -1,8 +1,9 @@
 <div class="container" style="margin-top: 70px;">
-    <h3 class="d-inline my-3"><?= $title; ?></h3>
+    <center>
+        <h1 class="d-inline my-3"><?= $title; ?></h1>
+    </center>
     <div>
-        <button class="btn btn-sm btn-primary mb-3"><i class="fas fa-plus fa-sm"></i>Tambah Produk
-        </button>
+        <a href="#" class="btn btn-primary">Tambah Produk</a>
     </div>
 
     <div class="row mt-2">
@@ -13,8 +14,8 @@
                     <div class="card-body">
                         <h5 class="card-title"><a class="text-dark"><?= $brg['nama_produk']; ?></a></h5>
                         <p class="card-text">Rp <?= $brg['harga_produk'];  ?></p>
-                        <a class="btn btn-warning">EDIT</a>
-                        <a class="btn btn-danger float-right" onclick="return confirm('Apakah anda yakin?');">DELETE</a>
+                        <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Edit</a>
+                        <a href="#" class="btn btn-danger rounded-0 w-100">Delete</a>
                     </div>
                 </div>
             </div>
