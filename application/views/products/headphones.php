@@ -4,7 +4,7 @@
 		<?php foreach ($headphones as $headphone) : ?>
 			<div class="col-sm-3 mb-2">
 				<div class="card rounded-0">
-					<img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/') . $headphone['gambar_produk']; ?>" alt="Card image cap" height="200px">
+					<img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/') . $headphone['gambar_produk']; ?>" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title"><a class="text-dark" href="<?= base_url('Products/detailProduct/') . $headphone['id_headset']; ?>"><?= $headphone['nama_produk']; ?></a></h5>
 						<p class="card-text">Rp <?= $headphone['harga_produk'];  ?></p>

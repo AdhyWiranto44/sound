@@ -5,7 +5,7 @@
 			<div class="col-sm-3 mb-2">
 				<div class="card rounded-0">
 					<div class="gambarProduk">
-						<img class="card-img-top rounded-0" src="<?= base_url('assets/products/earphone/') . $earphone['gambar_produk']; ?>" alt="Card image cap" height="300px">
+						<img class="card-img-top rounded-0" src="<?= base_url('assets/products/earphone/') . $earphone['gambar_produk']; ?>" alt="Card image cap">
 					</div>
 					<div class="card-body">
 						<h5 class="card-title"><a class="text-dark" href="<?= base_url('Products/detailProduct/') . $earphone['id_headset']; ?>"><?= $earphone['nama_produk']; ?></a></h5>
