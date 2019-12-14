@@ -1,11 +1,8 @@
 <div class="container" style="margin-top: 70px;">
-    <center>
-        <h1 class="d-inline my-3"><?= $title; ?></h1>
-    </center>
     <div>
-        <a href="#" class="btn btn-primary">Tambah Produk</a>
+        <h1 class="d-inline my-3"><?= $title; ?></h1>
     </div>
-
+    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah_produk">Tambah Produk</button>
     <div class="row mt-2">
         <?php foreach ($barang as $brg) : ?>
             <div class="col-sm-3 mb-2">
@@ -20,5 +17,46 @@
                 </div>
             </div>
         <?php endforeach ?>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="tambah_produk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Produk</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?php echo base_url() . 'Products/tambahHeadphone'; ?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Nama Produk</label>
+                        <input type="text" name="nama_produk" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Merk Produk</label>
+                        <input type="text" name="merk_produk" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Harga Produk</label>
+                        <input type="text" name="harga_produk" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipe Produk</label>
+                        <input type="text" name="tipe_produk" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar Produk</label></br>
+                        <input type="file" name="gambar_produk" class="form-control">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
+        </div>
     </div>
 </div>

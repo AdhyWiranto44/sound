@@ -22,7 +22,13 @@ class Products_model extends CI_Model
 		return $this->db->query($query)->result_array();
 	}
 
-	public function getProductById($id) {
-		return $this->db->get_where('headset', ['id_headset' => $id ])->row_array();
+	public function getProductById($id)
+	{
+		return $this->db->get_where('headset', ['id_headset' => $id])->row_array();
+	}
+
+	public function tambahProduk($data, $table)
+	{
+		$this->db->insert($table, $data);
 	}
 }

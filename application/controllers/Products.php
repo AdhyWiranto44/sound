@@ -87,4 +87,34 @@ class Products extends CI_Controller
       $this->load->view('products/dataEarphones', $data);
       $this->load->view('templates/footer');
    }
+
+   public function tambahHeadphone()
+   {
+      $nama_produk = $this->input->post('nama_produk');
+      $merk_produk = $this->input->post('merk_produk');
+      $harga_produk = $this->input->post('harga_produk');
+      $tipe_produk = $this->input->post('tipe_produk');
+      $gambar_produk = $_FILES['gambar_produk']['name'];
+      if ($gambar_produk = '') { } else {
+         $config['upload_path'] = './assets/products/headphone/';
+         $config['allowed_types'] = 'jpg|jpeg|png|gif';
+
+         $this->load->library('upload', $config);
+         if (!$this->upload->do_upload('gambar_produk')) {
+            echo "Gambar gagal diupload!";
+         } else {
+            $gambar_produk = $this->upload->data('file_name');
+         }
+      }
+      $data = array(
+         'nama_produk' => $nama_produk,
+         'merk_produk' => $merk_produk,
+         'harga_produk' => $harga_produk,
+         'tipe_produk' => $tipe_produk,
+         'gambar_produk' => $gambar_produk
+      );
+
+      $this->Products_model->tambahProduk($data, 'headset');
+      redirect('products/dataHeadphones');
+   }
 }
