@@ -5,7 +5,7 @@
 				<div class="card-body">
 					<form method="post" action="<?= base_url('transaction/konfirmasipesanan') ?>">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-6 mb-3">
 								<p class="h5"><i class="far fa-user text-dark d-inline mr-2"></i><?= $user['name']; ?></p>
 								<div class="form-group" style="font-family: Arial, Helvetica, sans-serif;">
 									<label for="alamat">Alamat</label>
@@ -17,9 +17,9 @@
 								</div>
 								<div class="form-group">
 									<label for="kurir">Pilih Kurir</label>
-									<select class="form-control" id="" name="">
+									<select class="form-control" id="" name="" style="font-family: Arial, Helvetica, sans-serif;">
 										<?php foreach ($kurir as $k) : ?>
-											<option value="<?= $k['id']; ?>"><?= $k['nama_kurir']; ?></option>
+											<option value="<?= $k['id']; ?>" style="font-family: Arial, Helvetica, sans-serif;"><?= $k['nama_kurir']; ?></option>
 										<?php endforeach; ?>
 									</select>
 								</div>
@@ -47,6 +47,7 @@
 								<button type="submit" class="btn btn-primary">Confirm Order</button>
 							</div>
 							<div class="col-sm-4">
+								<h6>Daftar Pesanan</h6>
 								<div class="card">
 									<div class="card-body">
 										<?php foreach ($item as $i) : ?>

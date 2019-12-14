@@ -17,13 +17,19 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="<?= base_url('assets/img/carousel/1.png'); ?>" class="d-block w-100">
+            <a href="<?= base_url('products/detail/11'); ?>">
+              <img src="<?= base_url('assets/img/carousel/1.png'); ?>" class="d-block w-100">
+            </a>
           </div>
           <div class="carousel-item">
-            <img src="<?= base_url('assets/img/carousel/2.png'); ?>" class="d-block w-100">
+            <a href="<?= base_url('products/detail/19'); ?>">
+              <img src="<?= base_url('assets/img/carousel/2.png'); ?>" class="d-block w-100">
+            </a>
           </div>
           <div class="carousel-item">
-            <img src="<?= base_url('assets/img/carousel/3.png'); ?>" class="d-block w-100">
+            <a href="<?= base_url('products/detail/9'); ?>">
+              <img src="<?= base_url('assets/img/carousel/3.png'); ?>" class="d-block w-100">
+            </a>
           </div>
         </div>
       </div>
@@ -39,7 +45,7 @@
         <div class="card-img-overlay">
           <h4 class="card-title">Headphones</h4>
           <p class="card-text">Enjoy your creativity</p>
-          <a class="text-white" href="<?= base_url('products/showHeadphones'); ?>">more ></a>
+          <a class="text-white" href="<?= base_url('products/headphones'); ?>">more ></a>
         </div>
       </div>
     </div>
@@ -49,7 +55,7 @@
         <div class="card-img-overlay">
           <h4 class="card-title">Earphones</h4>
           <p class="card-text">Just chillin'</p>
-          <a class="text-white" href="<?= base_url('products/showEarphones'); ?>">more ></a>
+          <a class="text-white" href="<?= base_url('products/earphones'); ?>">more ></a>
         </div>
       </div>
     </div>
@@ -59,7 +65,7 @@
         <div class="card-img-overlay">
           <h4 class="card-title">Brands</h4>
           <p class="card-text">Find your favorite brand</p>
-          <a class="text-white" href="<?= base_url('products/showBrands'); ?>">more ></a>
+          <a class="text-white" href="<?= base_url('products/brands'); ?>">more ></a>
         </div>
       </div>
     </div>
