@@ -42,8 +42,8 @@
 
             <div class="form-group row justify-content-end">
                 <div class="col-sm-10">
-                    <a href="<?= base_url('user'); ?>" class="btn btn-secondary">Cancel</a>
-                    <button type="submit" class="btn btn-primary">Finish Edit</button>
+                    <a href="<?= base_url('user'); ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Cancel</a>
+                    <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Finish Edit</button>
                 </div>
             </div>
 

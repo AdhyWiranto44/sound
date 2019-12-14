@@ -5,11 +5,13 @@
 			<div class="col-sm-3 mb-2">
 				<div class="card rounded-0">
 					<div class="gambarProduk">
-						<img class="card-img-top rounded-0" src="<?= base_url('assets/products/earphone/') . $earphone['gambar_produk']; ?>" alt="Card image cap">
+						<a href="<?= base_url('products/detail/') . $earphone['id_headset']; ?>">
+							<img class="card-img-top rounded-0 on-hover" src="<?= base_url('assets/products/earphone/') . $earphone['gambar_produk']; ?>" alt="Card image cap">
+						</a>
 					</div>
 					<div class="card-body">
 						<h5 class="card-title"><a class="text-dark" href="<?= base_url('products/detail/') . $earphone['id_headset']; ?>"><?= $earphone['nama_produk']; ?></a></h5>
-						<p class="card-text">Rp <?= $earphone['harga_produk'];  ?></p>
+						<p class="card-text">Rp <?= $earphone['harga_produk'];  ?>,-</p>
 						<a href="<?= base_url('transaction/addtocart/') . $earphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
 						<a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
 					</div>

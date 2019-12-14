@@ -1,12 +1,14 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-white sidebar sidebar-light accordion border-right" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('home'); ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <img src="<?= base_url('assets/img/logo/') ?>logo2.png" style="height: 30px;">
+
+        <!-- <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-code"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">soUnd</div>
+        <div class="sidebar-brand-text mx-3">soUnd</div> -->
     </a>
 
     <!-- Divider -->

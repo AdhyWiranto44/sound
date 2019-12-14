@@ -1,5 +1,5 @@
 <div class="row" style="margin-top: 50px;">
-  <div class="col-6 mt-3 mx-auto">
+  <div class="col-4 mt-3 mx-auto">
     <?= $this->session->flashdata('message'); ?>
   </div>
 </div>
@@ -7,7 +7,7 @@
 <div class="container">
 
   <!-- Jumbotron -->
-  <div class="row mt-4">
+  <div class="row mt-4 mr-0">
     <div class="col">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -38,7 +38,7 @@
   <!-- end of Jumbotron -->
 
   <!-- Banner -->
-  <div class="row my-4">
+  <div class="row my-4 mr-0">
     <div class="col-sm mb-3">
       <div class="card text-white rounded-0 border-0">
         <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>headphones.png" alt="">
@@ -71,30 +71,5 @@
     </div>
   </div>
   <!-- end of Banner -->
-
-  <!-- Featured -->
-  <!-- <h5 class="d-inline">Featured Products</h5>
-  <div class="row mt-2">
-    <div class="col-sm-3 mb-2">
-      <div class="card rounded-0">
-        <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/'); ?>h1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Beats Studio 3 Wireless</h5>
-          <p class="card-text">Rp 3912000</p>
-          <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-          <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-sm">
-      <a class="text-dark" href="<?= base_url('products/showAll'); ?>">
-        <p class="d-inline">see more ></p>
-      </a>
-    </div>
-  </div> -->
-  <!-- end of Featured -->
 
 </div>

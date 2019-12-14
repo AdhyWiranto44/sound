@@ -1,9 +1,41 @@
-<div class="container" style="margin-top: 70px;">
-    <div>
-        <h1 class="d-inline my-3"><?= $title; ?></h1>
-    </div>
-    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah_produk">Tambah Produk</button>
-    <div class="row mt-2">
+<div class="container">
+
+    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
+    <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Headphone</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Menu</th>
+                <th scope="col">Merk</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Gambar</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <?php $i = 1; ?>
+            <?php foreach ($barang as $b) : ?>
+                <tr>
+                    <th scope="row"><?= $i++; ?></th>
+                    <td><?= $b['nama_produk']; ?></td>
+                    <td><?= $b['merk_produk']; ?></td>
+                    <td><?= $b['harga_produk']; ?></td>
+                    <td>
+                        <img src="<?= base_url('assets/products/headphone/') . $b['gambar_produk']; ?>" style="height: 30px;">
+                    </td>
+                    <td>
+                        <a href="#" class="badge badge-success">Edit</a>
+                        <a href="#" class="badge badge-danger">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <!-- <div class="row mt-2">
         <?php foreach ($barang as $brg) : ?>
             <div class="col-sm-3 mb-2">
                 <div class="card rounded-0">
@@ -17,7 +49,7 @@
                 </div>
             </div>
         <?php endforeach ?>
-    </div>
+    </div> -->
 </div>
 
 <!-- Modal -->

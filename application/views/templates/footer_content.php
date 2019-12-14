@@ -1,4 +1,4 @@
-<footer>
+<footer class="sticky-footer">
   <div class="container border-top mt-5">
     <p class="text-center my-3">Copyright &copy; sound, Inc 2019</p>
   </div>

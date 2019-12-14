@@ -1,3 +1,9 @@
+  <footer class="sticky-footer">
+    <div class="container border-top">
+      <p class="text-center my-3">Copyright &copy; sound, Inc 2019</p>
+    </div>
+  </footer>
+
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

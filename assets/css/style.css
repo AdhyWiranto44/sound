@@ -17,3 +17,29 @@ p {
   font-family: roboto;
 }
 
+.imgredup {
+  filter: brightness(50%);
+}
+
+.carousel-indicators {
+  opacity: 0;
+  transition: .3s;
+}
+
+.carousel-indicators:hover {
+  opacity: 1;
+}
+
+.on-hover {
+  transition: 1s;
+}
+
+.on-hover:hover {
+  filter: brightness(50%);
+}
+
+@media (min-width: 768px) {
+  .customMargin {
+    margin-left: -120px;
+  }
+}

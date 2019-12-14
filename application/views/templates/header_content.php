@@ -15,27 +15,6 @@
   <!-- Font Awesome -->
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <style>
-    .imgredup {
-      filter: brightness(50%);
-    }
-
-    .carousel-indicators {
-      opacity: 0;
-      transition: .3s;
-    }
-
-    .carousel-indicators:hover {
-      opacity: 1;
-    }
-
-    @media (min-width: 768px) {
-      .customMargin {
-        margin-left: -120px;
-      }
-    }
-  </style>
-
   <title><?= $title; ?></title>
 </head>
 

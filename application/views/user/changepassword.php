@@ -26,10 +26,10 @@
                     <?= form_error('new_password2', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Change Password</button>
+                    <button type="submit" class="btn btn-warning">Change Password</button>
                 </div>
                 <div class="form-group">
-                    <a href="<?= base_url('user/resetpassword'); ?>"><span class="badge badge-warning">Forgot? Reset Password.</span></a>
+                    <a href="<?= base_url('user/resetpassword'); ?>"><span class="btn badge badge-secondary">Forgot? Reset Password.</span></a>
                 </div>
             </form>
         </div>

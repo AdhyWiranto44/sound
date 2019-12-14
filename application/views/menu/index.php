@@ -10,7 +10,7 @@
       <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
       <?= $this->session->flashdata('message'); ?>
 
-      <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addMenuModal">Add New Menu</button>
+      <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target="#addMenuModal"><i class="fas fa-plus"></i> Add New Menu</button>
 
       <table class="table table-hover">
         <thead>
@@ -61,8 +61,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Cancel</button>
+          <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Add</button>
         </div>
       </form>
     </div>
