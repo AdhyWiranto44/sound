@@ -23,7 +23,7 @@
         <div class="dropdown-menu customMargin">
           <a href="<?= base_url('user'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Profile</a>
           <hr class="border">
-          <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">Pesanan</a>
+          <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Order</a>
           <hr class="border">
           <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>
         </div>

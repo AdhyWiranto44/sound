@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2019 at 06:13 AM
+-- Generation Time: Dec 14, 2019 at 09:33 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `id_cart` int(11) NOT NULL,
+  `email_user` varchar(128) NOT NULL,
   `id_headset` int(11) DEFAULT NULL,
   `quantity` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -78,6 +79,28 @@ INSERT INTO `headset` (`id_headset`, `nama_produk`, `merk_produk`, `harga_produk
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kurir`
+--
+
+CREATE TABLE `kurir` (
+  `id` int(11) NOT NULL,
+  `nama_kurir` varchar(128) NOT NULL,
+  `biaya` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kurir`
+--
+
+INSERT INTO `kurir` (`id`, `nama_kurir`, `biaya`) VALUES
+(1, 'JNE', 9000),
+(2, 'TiKi', 8000),
+(3, 'Pos Indonesia', 11000),
+(4, 'J&T Express', 22000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pesanan`
 --
 
@@ -87,6 +110,8 @@ CREATE TABLE `pesanan` (
   `id_headset` int(11) DEFAULT NULL,
   `quantity` int(11) NOT NULL,
   `alamat` varchar(128) NOT NULL,
+  `no_telp` varchar(12) NOT NULL,
+  `id_kurir` int(11) NOT NULL,
   `metode_pembayaran` varchar(128) NOT NULL,
   `total_pesanan` int(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -235,6 +260,12 @@ ALTER TABLE `headset`
   ADD PRIMARY KEY (`id_headset`);
 
 --
+-- Indexes for table `kurir`
+--
+ALTER TABLE `kurir`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
@@ -280,13 +311,19 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `headset`
 --
 ALTER TABLE `headset`
   MODIFY `id_headset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `kurir`
+--
+ALTER TABLE `kurir`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pesanan`

@@ -55,8 +55,8 @@ class Auth extends CI_Controller
             redirect('admin');
           } else {
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Login Success<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
-    <span aria-hidden="true">&times;</span>
-  </button></div>');
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
             redirect('home');
           }
         } else {

@@ -12,6 +12,9 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
 
+  <!-- Font Awesome -->
+  <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
   <style>
     .imgredup {
       filter: brightness(50%);
