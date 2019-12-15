@@ -13,8 +13,9 @@
   font-size: 17px;
 }
 
-p {
+p, li {
   font-family: roboto;
+  font-size: 14px;
 }
 
 .imgredup {
@@ -41,5 +42,16 @@ p {
 @media (min-width: 768px) {
   .customMargin {
     margin-left: -120px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+  font-size: 20px;
+  }
+
+  p {
+    font-family: roboto;
+    font-size: 17px;
   }
 }

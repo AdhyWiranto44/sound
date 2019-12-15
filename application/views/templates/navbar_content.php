@@ -9,9 +9,9 @@
     <div class="navbar-nav mx-auto">
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a>
-      <a class="nav-item nav-link mr-3" href="#">About</a>
-      <a class="nav-item nav-link" href="#">Contact us</a>
+      <!-- <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a> -->
+      <a class="nav-item nav-link mr-3" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+      <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a>
     </div>
 
     <?php if ($this->session->userdata('email')) : ?>

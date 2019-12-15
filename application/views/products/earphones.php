@@ -3,7 +3,7 @@
 	<div class="row mt-2">
 		<?php foreach ($earphones as $earphone) : ?>
 			<div class="col-sm-3 mb-2">
-				<div class="card rounded-0">
+				<div class="card rounded-0 mb-3">
 					<div class="gambarProduk">
 						<a href="<?= base_url('products/detail/') . $earphone['id_headset']; ?>">
 							<img class="card-img-top rounded-0 on-hover" src="<?= base_url('assets/products/earphone/') . $earphone['gambar_produk']; ?>" alt="Card image cap">
