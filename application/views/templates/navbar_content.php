@@ -22,7 +22,11 @@
           <img class="rounded-circle ml-2" src="<?= base_url('assets/img/profile/') . $user['image']; ?>" style="width: 2.2rem;">
         </button>
         <div class="dropdown-menu customMargin">
-          <a href="<?= base_url('user'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Profile</a>
+          <?php if ($this->session->userdata('role_id') == 1) : ?>
+            <a href="<?= base_url('admin'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">Dashboard</a>
+          <?php else : ?>
+            <a href="<?= base_url('user'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Profile</a>
+          <?php endif; ?>
           <hr class="border">
           <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Order</a>
           <hr class="border">
