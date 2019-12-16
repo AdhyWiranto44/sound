@@ -7,6 +7,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mx-auto">
+      <a class="nav-item nav-link mr-3" href="<?= base_url('home'); ?>">Home</a>
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
       <!-- <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a> -->
