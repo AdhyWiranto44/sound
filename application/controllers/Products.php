@@ -91,10 +91,10 @@ class Products extends CI_Controller
    //menambahkan produk headphone
    public function tambahHeadphone()
    {
-      $nama_produk = $this->input->post('nama_produk');
-      $merk_produk = $this->input->post('merk_produk');
-      $harga_produk = $this->input->post('harga_produk');
-      $tipe_produk = $this->input->post('tipe_produk');
+      $nama_produk = htmlspecialchars($this->input->post('nama_produk'));
+      $merk_produk = htmlspecialchars($this->input->post('merk_produk'));
+      $harga_produk = htmlspecialchars($this->input->post('harga_produk'));
+      $tipe_produk = "Headphone";
       $gambar_produk = $_FILES['gambar_produk']['name'];
 
       // cek jika ada gambar yang akan diupload

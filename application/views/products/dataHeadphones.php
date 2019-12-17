@@ -30,7 +30,7 @@
                     <td><?= $b['harga_produk']; ?></td>
                     <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="<?= base_url('Products/hapusHeadphone/') . $b['id_headset']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin?');">Delete</a>
+                        <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -78,13 +78,13 @@
                         <label>Harga Produk</label>
                         <input type="text" name="harga_produk" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Tipe Produk</label>
                         <select class="form-control" name="produk" id="produk">
                             <option value="headphone">Headphone</option>
                             <option value="earphone">Earphone</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Gambar Produk</label></br>
                         <input type="file" name="gambar_produk" class="form-control-file">
@@ -109,10 +109,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a href="<?= base_url('products/hapusheadset'); ?>" class="btn btn-primary">Confirm</a>
-                </div>
+                <p>Yakin ingin menghapus produk?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a href="<?= base_url('Products/hapusHeadphone/') . $b['id_headset']; ?>" class="btn btn-warning">Ya</a>
             </div>
         </div>
     </div>
