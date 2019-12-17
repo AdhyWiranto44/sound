@@ -2,6 +2,8 @@
 
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
+    <?php echo $this->session->flashdata('message'); ?>
+
     <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Headphone</button>
     <table class="table table-hover">
         <thead>
@@ -28,7 +30,7 @@
                     </td>
                     <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
+                        <a href="<?= base_url('Products/hapusHeadphone/') . $b['id_headset']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin?');">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -57,7 +59,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Produk</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Headphone</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
