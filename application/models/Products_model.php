@@ -32,8 +32,8 @@ class Products_model extends CI_Model
 		$this->db->insert($table, $data);
 	}
 
-	public function deleteproduct($id)
+	public function hapusProduk($id)
 	{
-		$this->db->delete('headset', ['id' => $id]);
+		$this->db->delete('headset', ['id_headset' => $id]);
 	}
 }
