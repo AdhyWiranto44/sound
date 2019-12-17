@@ -70,7 +70,7 @@ class Products extends CI_Controller
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
-      $this->load->view('products/dataHeadphones', $data);
+      $this->load->view('products/dataheadphones', $data);
       $this->load->view('templates/footer');
    }
 
@@ -84,7 +84,7 @@ class Products extends CI_Controller
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
-      $this->load->view('products/dataEarphones', $data);
+      $this->load->view('products/dataearphones', $data);
       $this->load->view('templates/footer');
    }
 
@@ -95,7 +95,8 @@ class Products extends CI_Controller
       $harga_produk = $this->input->post('harga_produk');
       $tipe_produk = $this->input->post('tipe_produk');
       $gambar_produk = $_FILES['gambar_produk']['name'];
-      if ($gambar_produk = '') { } else {
+      if ($gambar_produk = '') {
+      } else {
          $config['upload_path'] = './assets/products/headphone/';
          $config['allowed_types'] = 'jpg|jpeg|png|gif';
 
@@ -116,5 +117,10 @@ class Products extends CI_Controller
 
       $this->Products_model->tambahProduk($data, 'headset');
       redirect('products/dataHeadphones');
+   }
+
+   public function hapusheadset($id)
+   {
+      $this->products_model->deleteproduct();
    }
 }

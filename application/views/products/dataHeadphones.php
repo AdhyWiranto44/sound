@@ -7,10 +7,10 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Gambar</th>
                 <th scope="col">Menu</th>
                 <th scope="col">Merk</th>
                 <th scope="col">Harga</th>
-                <th scope="col">Gambar</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -20,15 +20,15 @@
             <?php foreach ($barang as $b) : ?>
                 <tr>
                     <th scope="row"><?= $i++; ?></th>
+                    <td>
+                        <img src="<?= base_url('assets/products/headphone/') . $b['gambar_produk']; ?>" style="height: 100px;">
+                    </td>
                     <td><?= $b['nama_produk']; ?></td>
                     <td><?= $b['merk_produk']; ?></td>
                     <td><?= $b['harga_produk']; ?></td>
                     <td>
-                        <img src="<?= base_url('assets/products/headphone/') . $b['gambar_produk']; ?>" style="height: 30px;">
-                    </td>
-                    <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
+                        <button type="button" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -63,7 +63,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url() . 'Products/tambahHeadphone'; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() . 'products/tambahheadphone'; ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Produk</label>
                         <input type="text" name="nama_produk" class="form-control">
@@ -78,17 +78,40 @@
                     </div>
                     <div class="form-group">
                         <label>Tipe Produk</label>
-                        <input type="text" name="tipe_produk" class="form-control">
+                        <select class="form-control" name="produk" id="produk">
+                            <option value="headphone">Headphone</option>
+                            <option value="earphone">Earphone</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Gambar Produk</label></br>
-                        <input type="file" name="gambar_produk" class="form-control">
+                        <input type="file" name="gambar_produk" class="form-control-file">
                     </div>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Hapus Modal -->
+<div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Produk?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a href="<?= base_url('products/hapusheadset'); ?>" class="btn btn-primary">Confirm</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

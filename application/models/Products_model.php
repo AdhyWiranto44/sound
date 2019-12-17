@@ -31,4 +31,9 @@ class Products_model extends CI_Model
 	{
 		$this->db->insert($table, $data);
 	}
+
+	public function deleteproduct($id)
+	{
+		$this->db->delete('headset', ['id' => $id]);
+	}
 }
