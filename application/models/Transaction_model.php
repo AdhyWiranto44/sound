@@ -19,4 +19,27 @@ class Transaction_model extends CI_Model
     $item = $this->db->query($queryItem)->result_array();
     return $item;
   }
+
+  public function addToCart($id)
+  {
+    $data = [
+      'id_cart' => '',
+      'email_user' => $this->session->userdata('email'),
+      'id_headset' => $id,
+      'quantity' => 1
+    ];
+    $this->db->insert('cart', $data);
+  }
+
+  public function changeCartQuantity($id)
+  {
+    $queryQuantity = "SELECT quantity FROM cart WHERE id_headset = $id";
+    $quantity = $this->db->query($queryQuantity)->row_array();
+
+    $i = (int) $quantity['quantity'];
+
+    $this->db->set('quantity', $i += 1);
+    $this->db->where('id_headset', $id);
+    $this->db->update('cart');
+  }
 }

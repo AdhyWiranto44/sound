@@ -29,7 +29,7 @@ class Products extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
       $this->load->model("products_model");
-      $data["earphones"] = $this->products_model->getEarphones();
+      $data['earphones'] = $this->products_model->getEarphones();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);

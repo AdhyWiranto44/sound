@@ -54,6 +54,7 @@
 											<!-- HARUSNYA PAKAI TABLE -->
 											<img class="d-inline border mr-2 mb-2" src="<?= base_url('assets/products/') . $i['tipe_produk'] . '/' . $i['gambar_produk']; ?>" style="height: 40px;">
 											<h6 class="d-inline"><?= $i['nama_produk']; ?></h6>
+											<p>x <?= $i['quantity']; ?></p>
 											<br>
 										<?php endforeach; ?>
 									</div>

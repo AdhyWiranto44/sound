@@ -38,24 +38,25 @@ class Transaction extends CI_Controller
     {
         $this->db->delete('cart', ['email_user' => $this->session->userdata('email')]);
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Transaction successfull!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Transaction Success!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
         redirect('home');
     }
 
-    public function addToCart($id)
+    public function buy($id)
     {
         if (!$this->session->userdata('email')) {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login dahulu sebelum membeli. :)</div>');
             redirect('auth');
         } else {
-            $data = [
-                'id_cart' => '',
-                'email_user' => $this->session->userdata('email'),
-                'id_headset' => $id,
-                'quantity' => 1
-            ];
+            $query = $this->db->get_where('cart', ['id_headset' => $id]);
 
-            $this->db->insert('cart', $data);
+            if ($query->num_rows() < 1) {
+                $this->transaction->addToCart($id);
+            } else {
+                $this->transaction->changeCartQuantity($id);
+            }
 
             redirect('transaction/pesanan');
         }
