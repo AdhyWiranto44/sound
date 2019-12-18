@@ -121,17 +121,7 @@ class Products extends CI_Controller
             redirect('products/dataHeadphones');
          }
       }
-      // else {
-      //    $config['upload_path'] = './assets/products/headphone/';
-      //    $config['allowed_types'] = 'jpg|jpeg|png|gif';
-      //    $this->load->library('upload', $config);
 
-      //    if (!$this->upload->do_upload('gambar_produk')) {
-      //       echo "Gambar gagal diupload!";
-      //    } else {
-      //       $gambar_produk = $this->upload->data('file_name');
-      //    }
-      // }
       $data = [
          'nama_produk' => $nama_produk,
          'merk_produk' => $merk_produk,
@@ -157,35 +147,41 @@ class Products extends CI_Controller
       $gambar_produk = $_FILES['gambar_produk']['name'];
 
       // cek jika ada gambar yang akan diupload
-      if ($gambar_produk = '') {
-      } else {
+      if ($gambar_produk) {
+         $config['allowed_types'] = 'gif|jpg|jpeg|png';
+         $config['max_size'] = '8192'; // in kb
          $config['upload_path'] = './assets/products/earphone/';
-         $config['allowed_types'] = 'jpg|jpeg|png|gif';
+
          $this->load->library('upload', $config);
 
-         if (!$this->upload->do_upload('gambar_produk')) {
-            echo "Gambar gagal diupload!";
+         if ($this->upload->do_upload('gambar_produk')) {
+            $upload_image = $this->upload->data('file_name');
+            $this->db->set('gambar_produk', $upload_image);
          } else {
-            $gambar_produk = $this->upload->data('file_name');
+            $this->session->set_flashdata('message', "<div class='alert alert-danger' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+            redirect('products/dataEarphones');
          }
       }
-      $data = array(
+
+      $data = [
          'nama_produk' => $nama_produk,
          'merk_produk' => $merk_produk,
          'harga_produk' => $harga_produk,
          'tipe_produk' => $tipe_produk,
          'gambar_produk' => $gambar_produk
-      );
-      $this->Products_model->tambahProduk($data, 'headset');
+      ];
+
+      // $this->Products_model->tambahProduk($data, 'headset');
+      $this->db->insert('headset', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
       redirect('products/dataEarphones');
    }
 
    //menghapus produk Headphone
    public function hapusHeadphone($id)
    {
-      $this->Products_model->hapusProduk($id);
+      $this->Products_model->hapusHeadphone($id);
 
       $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
@@ -194,7 +190,7 @@ class Products extends CI_Controller
    //menghapus produk earphone
    public function hapusEarphone($id)
    {
-      $this->Products_model->hapusProduk($id);
+      $this->Products_model->hapusEarphone($id);
       $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
       redirect('products/dataEarphones');

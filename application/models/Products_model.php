@@ -32,13 +32,22 @@ class Products_model extends CI_Model
 		$this->db->insert($table, $data);
 	}
 
-	public function hapusProduk($id)
+	public function hapusHeadphone($id)
 	{
 		$img_name = $this->db->get_where('headset', ['id_headset' => $id])->row_array();
 
 		unlink(FCPATH . 'assets/products/headphone/' . $img_name['gambar_produk']);
 		$this->db->delete('headset', ['id_headset' => $id]);
 	}
+
+	public function hapusEarphone($id)
+	{
+		$img_name = $this->db->get_where('headset', ['id_headset' => $id])->row_array();
+
+		unlink(FCPATH . 'assets/products/earphone/' . $img_name['gambar_produk']);
+		$this->db->delete('headset', ['id_headset' => $id]);
+	}
+
 	public function editProduk($where, $table)
 	{
 		return $this->db->get_where($table, $where);

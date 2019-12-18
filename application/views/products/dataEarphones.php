@@ -4,7 +4,7 @@
 
     <?php echo $this->session->flashdata('message'); ?>
 
-    <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Headphone</button>
+    <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Earphone</button>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -59,13 +59,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Headphone</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Earphone</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url() . 'products/tambahheadphone'; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url() . 'products/tambahearphone'; ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Produk</label>
                         <input type="text" name="nama_produk" class="form-control">
@@ -107,7 +107,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a href="<?= base_url('Products/hapusHeadphone/') . $b['id_headset']; ?>" class="btn btn-warning">Ya</a>
+                <a href="<?= base_url('Products/hapusEarphone/') . $b['id_headset']; ?>" class="btn btn-warning">Ya</a>
             </div>
         </div>
     </div>
