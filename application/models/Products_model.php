@@ -34,6 +34,9 @@ class Products_model extends CI_Model
 
 	public function hapusProduk($id)
 	{
+		$img_name = $this->db->get_where('headset', ['id_headset' => $id])->row_array();
+
+		unlink(FCPATH . 'assets/products/headphone/' . $img_name['gambar_produk']);
 		$this->db->delete('headset', ['id_headset' => $id]);
 	}
 	public function editProduk($where, $table)

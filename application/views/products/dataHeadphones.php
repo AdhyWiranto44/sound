@@ -54,7 +54,7 @@
     </div> -->
 </div>
 
-<!-- Modal -->
+<!-- Tambah Modal -->
 <div class="modal fade" id="tambah_produk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -65,7 +65,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url() . 'products/tambahheadphone'; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url() . 'products/tambahheadphone'; ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Produk</label>
                         <input type="text" name="nama_produk" class="form-control">
@@ -84,7 +84,8 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning">Simpan</button>
             </div>
             </form>
         </div>
