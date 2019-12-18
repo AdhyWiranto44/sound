@@ -16,6 +16,7 @@ class Transaction extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kurir'] = $this->db->get('kurir')->result_array();
         $data['list_order'] = $this->transaction->showAllCartItemByUser();
+        $data['item'] = $this->transaction->showAllCartItemByUser();
 
         $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
 
@@ -25,8 +26,6 @@ class Transaction extends CI_Controller
             </button></div>');
             redirect('home');
         } else {
-            $data['item'] = $this->transaction->showAllCartItemByUser();
-
             $this->load->view('templates/header_content', $data);
             $this->load->view('templates/navbar_content', $data);
             $this->load->view('transactions/buy', $data);
