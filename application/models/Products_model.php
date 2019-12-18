@@ -31,4 +31,19 @@ class Products_model extends CI_Model
 	{
 		$this->db->insert($table, $data);
 	}
+
+	public function hapusProduk($id)
+	{
+		$this->db->delete('headset', ['id_headset' => $id]);
+	}
+	public function editProduk($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
+
+	public function ubahProduk($where, $data, $table)
+	{
+		$this->db->where($where);
+		$this->db->update($table, $data);
+	}
 }

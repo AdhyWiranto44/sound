@@ -33,16 +33,38 @@ class Transaction_model extends CI_Model
     return $result;
   }
 
-  // public function getAllById($id)
-  // {
-  //   $result = $this->db->where('id_headset', $id)
-  //                     ->limit(1)
-  //                     ->get('cart');
-    
-  //   if($result->num_rows() > 0){
-  //     return $result->row();
-  //   } else {
-  //     return array();
-  //   }
-  // }
+  public function getTotal()
+  {
+    $allCart = $this->showAllCartItemByUser();
+    $total = 0;
+
+    foreach ($allCart as $i) {
+      $total += $i['quantity'] * $i['harga_produk'];
+    }
+
+    return $total;
+  }
+
+  public function addToCart($id)
+  {
+    $data = [
+      'id_cart' => '',
+      'email_user' => $this->session->userdata('email'),
+      'id_headset' => $id,
+      'quantity' => 1
+    ];
+    $this->db->insert('cart', $data);
+  }
+
+  public function changeCartQuantity($id)
+  {
+    $queryQuantity = "SELECT quantity FROM cart WHERE id_headset = $id";
+    $quantity = $this->db->query($queryQuantity)->row_array();
+
+    $i = (int) $quantity['quantity'];
+
+    $this->db->set('quantity', $i += 1);
+    $this->db->where('id_headset', $id);
+    $this->db->update('cart');
+  }
 }

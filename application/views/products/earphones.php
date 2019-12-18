@@ -11,12 +11,13 @@
 					</div>
 					<div class="card-body">
 						<h5 class="card-title"><a class="text-dark" href="<?= base_url('products/detail/') . $earphone['id_headset']; ?>"><?= $earphone['nama_produk']; ?></a></h5>
-						<p class="card-text">Rp <?= $earphone['harga_produk'];  ?>,-</p>
-						<a href="<?= base_url('transaction/addtocart/') . $earphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-						<a href="<?= base_url('transaction/addCart/') . $earphone['id_headset']; ?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+
+						<p class="card-text">Rp <?= number_format($earphone['harga_produk']); ?>,-</p>
+						<a href="<?= base_url('transaction/buy/') . $earphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
+						<a href="<?= base_url('transaction/addtocart/') . $earphone['id_headset']; ?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
 					</div>
 				</div>
 			</div>
-		<?php endforeach ?>
+		<?php endforeach; ?>
 	</div>
 </div>
