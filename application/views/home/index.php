@@ -59,6 +59,7 @@
         </div>
       </div>
     </div>
+    
     <!-- <div class="col-sm mb-3">
       <div class="card text-white rounded-0 border-0">
         <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>brands.png" alt="">

@@ -8,6 +8,7 @@ class Transaction extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Transaction_model', 'transaction');
+        $this->load->library('cart');
     }
 
     public function pesanan()
@@ -16,6 +17,7 @@ class Transaction extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kurir'] = $this->db->get('kurir')->result_array();
         $data['list_order'] = $this->transaction->showAllCartItemByUser();
+        $data["count"] = $this->transaction->getCartTotalUser();
 
         $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
 
@@ -60,4 +62,30 @@ class Transaction extends CI_Controller
             redirect('transaction/pesanan');
         }
     }
+
+    public function Cart()
+    {
+        $data['title'] = 'Shopping Cart';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
+        $data['item'] = $this->transaction->showAllCartItemByUser();
+    }
+
+    public function addCart($id)
+    {
+        $data = [
+            'id_cart' => '',
+            'email_user' => $this->session->userdata('email'),
+            'id_headset' => $id,
+            'quantity' => 1
+        ];
+
+        $this->db->insert('cart', $data);
+
+        
+
+        redirect('Home', 'refresh');
+    }
+
+   
 }

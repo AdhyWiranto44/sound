@@ -12,7 +12,7 @@
                     <p class="card-text h3 ">Rp <?= $detail['harga_produk']; ?>,-</p>
 
                     <a href="<?= base_url('Transaction/pesanan'); ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-                    <a href="#" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+                    <a href="<?= base_url('Transaction/Cart')?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ class Auth extends CI_Controller
   {
     parent::__construct();
     $this->load->library('form_validation');
+    $this->load->model('Transaction_model', 'transaction');
   }
 
   public function index()
@@ -37,6 +38,7 @@ class Auth extends CI_Controller
     $password = $this->input->post('password');
 
     $user = $this->db->get_where('user', ['email' => $email])->row_array();
+    $count = $this->transaction->getCartTotalUser();
 
     // user is available
     if ($user) {
