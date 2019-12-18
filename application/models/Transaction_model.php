@@ -20,6 +20,18 @@ class Transaction_model extends CI_Model
     return $item;
   }
 
+  public function getTotal()
+  {
+    $allCart = $this->showAllCartItemByUser();
+    $total = 0;
+
+    foreach ($allCart as $i) {
+      $total += $i['quantity'] * $i['harga_produk'];
+    }
+
+    return $total;
+  }
+
   public function addToCart($id)
   {
     $data = [

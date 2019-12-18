@@ -17,6 +17,7 @@ class Transaction extends CI_Controller
         $data['kurir'] = $this->db->get('kurir')->result_array();
         $data['list_order'] = $this->transaction->showAllCartItemByUser();
         $data['item'] = $this->transaction->showAllCartItemByUser();
+        $data['total'] = $this->transaction->getTotal();
 
         $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
 

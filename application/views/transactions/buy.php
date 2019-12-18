@@ -63,7 +63,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php $total = 0; ?>
 							<?php $j = 1; ?>
 							<?php foreach ($item as $i) : ?>
 								<tr>
@@ -83,7 +82,6 @@
 									</td>
 								</tr>
 								<?php $j++; ?>
-								<?php $total += $i['quantity'] * $i['harga_produk']; ?>
 							<?php endforeach; ?>
 						</tbody>
 					</table>
