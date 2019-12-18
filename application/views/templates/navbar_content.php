@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-white fixed-top">
   <a class="navbar-brand" href="<?= base_url('home') ?>">
     <img src="<?= base_url('assets/img/logo/') ?>logo2.png" style="height: 30px;">
@@ -14,10 +13,10 @@
       <!-- <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a> -->
       <a class="nav-item nav-link mr-3" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
       <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a>
-      <a class="nav-item nav-link" href="#"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?=$count?></a>
     </div>
 
     <?php if ($this->session->userdata('email')) : ?>
+      <a class="text-dark mr-3" href="#"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a>
       <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
       <div class="dropdown">
         <button class="bg-transparent border-0 text-light" data-toggle="dropdown">
