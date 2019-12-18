@@ -29,7 +29,7 @@
                     <td><?= $b['merk_produk']; ?></td>
                     <td><?= $b['harga_produk']; ?></td>
                     <td>
-                        <a href="#" class="badge badge-success">Edit</a>
+                        <a href="#" class="badge badge-success" data-toggle="modal" data-target="#ubahModal">Edit</a>
                         <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</a>
                     </td>
                 </tr>
@@ -78,13 +78,6 @@
                         <label>Harga Produk</label>
                         <input type="text" name="harga_produk" class="form-control">
                     </div>
-                    <!-- <div class="form-group">
-                        <label>Tipe Produk</label>
-                        <select class="form-control" name="produk" id="produk">
-                            <option value="headphone">Headphone</option>
-                            <option value="earphone">Earphone</option>
-                        </select>
-                    </div> -->
                     <div class="form-group">
                         <label>Gambar Produk</label></br>
                         <input type="file" name="gambar_produk" class="form-control-file">
@@ -115,6 +108,44 @@
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a href="<?= base_url('Products/hapusHeadphone/') . $b['id_headset']; ?>" class="btn btn-warning">Ya</a>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- ubah Modal -->
+<div class="modal fade" id="ubahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form Ubah Data Headphone</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?php echo base_url('Products/ubahHeadphone/') . $b['id_headset']; ?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="id_headset" class="form-control" value="<?= $b['id_headset']; ?>">
+                        <label>Nama Produk</label>
+                        <input type="text" name="nama_produk" class="form-control" value="<?= $b['nama_produk']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Merk Produk</label>
+                        <input type="text" name="merk_produk" class="form-control" value="<?= $b['merk_produk']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Harga Produk</label>
+                        <input type="text" name="harga_produk" class="form-control" value="<?= $b['harga_produk']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar Produk</label></br>
+                        <input type="file" name="gambar_produk" class="form-control-file" value="<?= $b['gambar_produk']; ?>">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
         </div>
     </div>
 </div>

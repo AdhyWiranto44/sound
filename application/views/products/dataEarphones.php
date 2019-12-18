@@ -30,7 +30,7 @@
                     </td>
                     <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
+                        <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -79,10 +79,6 @@
                         <input type="text" name="harga_produk" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Tipe Produk</label>
-                        <input type="text" name="tipe_produk" class="form-control">
-                    </div>
-                    <div class="form-group">
                         <label>Gambar Produk</label></br>
                         <input type="file" name="gambar_produk" class="form-control">
                     </div>
@@ -91,6 +87,28 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
             </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Hapus Modal -->
+<div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Produk?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Yakin ingin menghapus produk?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a href="<?= base_url('Products/hapusEarphone/') . $b['id_headset']; ?>" class="btn btn-warning">Ya</a>
+            </div>
         </div>
     </div>
 </div>
