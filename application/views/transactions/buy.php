@@ -17,7 +17,7 @@
 							<label for="kurir">Pilih Kurir</label>
 							<select class="form-control" id="" name="" style="font-family: Arial, Helvetica, sans-serif;">
 								<?php foreach ($kurir as $k) : ?>
-									<option value="<?= $k['id']; ?>" style="font-family: Arial, Helvetica, sans-serif;"><?= $k['nama_kurir']; ?></option>
+									<option value="<?= $k['id']; ?>" style="font-family: Arial, Helvetica, sans-serif;"><?= $k['nama_kurir']; ?>(Rp <?= number_format($k['biaya']); ?>,-)</option>
 								<?php endforeach; ?>
 							</select>
 						</div>
@@ -86,6 +86,7 @@
 						</tbody>
 					</table>
 					<h4 class="border-top pt-2">Total : Rp <?= number_format($total); ?>,-</h4>
+					<small class="form-text text-muted" style="font-family: roboto;">Belum termasuk ongkos kirim</small>
 				</div>
 			</div>
 		</div>
