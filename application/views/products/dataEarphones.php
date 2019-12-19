@@ -27,7 +27,7 @@
                     </td>
                     <td><?= $b['nama_produk']; ?></td>
                     <td><?= $b['merk_produk']; ?></td>
-                    <td><?= $b['harga_produk']; ?></td>
+                    <td>Rp <?= number_format($b['harga_produk']); ?>,-</td>
                     <td>
                         <a href="#" class="badge badge-success" data-toggle="modal" data-target="#ubahModal">Edit</a>
                         <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</a>
@@ -36,22 +36,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-    <!-- <div class="row mt-2">
-        <?php foreach ($barang as $brg) : ?>
-            <div class="col-sm-3 mb-2">
-                <div class="card rounded-0">
-                    <img class="card-img-top rounded-0" src="<?= base_url('assets/products/headphone/') . $brg['gambar_produk']; ?>" alt="Card image cap" height="200px">
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="text-dark"><?= $brg['nama_produk']; ?></a></h5>
-                        <p class="card-text">Rp <?= $brg['harga_produk'];  ?></p>
-                        <a href="#" class="btn btn-warning mb-2 rounded-0 w-100">Edit</a>
-                        <a href="#" class="btn btn-danger rounded-0 w-100">Delete</a>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach ?>
-    </div> -->
 </div>
 
 <!-- Tambah Modal -->

@@ -42,7 +42,7 @@
 								</label>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Confirm Order</button>
+						<button type="submit" class="btn btn-warning">Checkout</button>
 					</form>
 				</div>
 			</div>
