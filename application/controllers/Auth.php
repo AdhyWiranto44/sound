@@ -82,6 +82,8 @@ class Auth extends CI_Controller
       redirect('user');
     }
 
+    $data['roles'] = $this->db->get('user_role')->result_array();
+
     $this->form_validation->set_rules('name', 'Name', 'required|trim');
     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
       'is_unique' => 'This email has already registered!'
@@ -95,7 +97,7 @@ class Auth extends CI_Controller
     if ($this->form_validation->run() == false) {
       $data['title'] = "soUnd: Registration";
       $this->load->view('templates/auth_header', $data);
-      $this->load->view('auth/registration');
+      $this->load->view('auth/registration', $data);
       $this->load->view('templates/auth_footer');
     } else {
       $data = [

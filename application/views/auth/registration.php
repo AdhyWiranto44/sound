@@ -16,8 +16,9 @@
               </div>
               <div class="form-group" style="font-family: roboto;">
                 <select class="form-control form-control-sm" id="role" name="role">
-                  <option value="2">As a Member</option>
-                  <option value="1">As a Administrator</option>
+                  <?php foreach ($roles as $role) : ?>
+                    <option value="<?= $role['id']; ?>">As a <?= $role['role']; ?></option>
+                  <?php endforeach; ?>
                 </select>
               </div>
               <div class="form-group" style="font-family: roboto;">
