@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 100px;">
 	<div class="row">
-		<div class="col">
+		<div class="col-md-12 col-lg-6 mb-3">
 			<div class="card">
 				<div class="card-body">
 					<form method="post" action="<?= base_url('transaction/konfirmasipesanan') ?>">
@@ -47,11 +47,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col">
+		<div class="col-md-12 col-lg-6">
 			<div class="card">
 				<div class="card-body">
 					<h6>Daftar Pesanan</h6>
-					<table class="table">
+					<table class="table table-responsive">
 						<thead>
 							<tr>
 								<th>#</th>
