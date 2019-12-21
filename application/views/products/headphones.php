@@ -1,4 +1,5 @@
 <div class="container" style="margin-top: 70px;">
+
 	<h3 class="d-inline my-3"><?= $title; ?></h3>
 	<div class="row mt-2">
 		<?php foreach ($headphones as $headphone) : ?>

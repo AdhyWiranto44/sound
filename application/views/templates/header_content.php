@@ -21,4 +21,4 @@
   <title><?= $title; ?></title>
 </head>
 
-<body class="bg-light">
+<body id="container" class="bg-light">
