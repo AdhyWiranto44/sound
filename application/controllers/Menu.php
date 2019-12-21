@@ -7,6 +7,7 @@ class Menu extends CI_Controller
   {
     parent::__construct();
     is_logged_in();
+    $this->load->model('Menu_model', 'menu');
   }
 
   public function index()
@@ -25,7 +26,8 @@ class Menu extends CI_Controller
       $this->load->view('menu/index', $data);
       $this->load->view('templates/footer');
     } else {
-      $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
+      $this->menu->addmenu();
+
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New menu added!</div>');
       redirect('menu');
     }
@@ -54,17 +56,42 @@ class Menu extends CI_Controller
       $this->load->view('menu/submenu', $data);
       $this->load->view('templates/footer');
     } else {
-      $data = [
-        'menu_id' => $this->input->post('menu_id'),
-        'title' => htmlspecialchars($this->input->post('title')),
-        'url' => htmlspecialchars($this->input->post('url')),
-        'icon' => htmlspecialchars($this->input->post('icon')),
-        'is_active' => $this->input->post('is_active')
-      ];
+      $this->menu->addsubmenu();
 
-      $this->db->insert('user_sub_menu', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New Submenu added!</div>');
       redirect('menu/submenu');
     }
+  }
+
+  public function editMenu($id)
+  {
+    $data['title'] = 'Edit Menu';
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $data['menu'] = $this->db->get_where('user_menu', ['id' => $id])->row_array();
+
+    $this->form_validation->set_rules('menu', 'Menu', 'required');
+
+    if ($this->form_validation->run() == false) {
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('menu/editmenu', $data);
+      $this->load->view('templates/footer');
+    } else {
+      $this->menu->editMenu($id);
+
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
+      redirect('menu');
+    }
+  }
+
+  public function deletemenu($id)
+  {
+    $this->menu->deletemenu($id);
+
+    $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
+    redirect('menu');
   }
 }

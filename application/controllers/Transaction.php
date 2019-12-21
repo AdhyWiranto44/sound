@@ -9,6 +9,7 @@ class Transaction extends CI_Controller
         parent::__construct();
         $this->load->model('Transaction_model', 'transaction');
         $this->load->library('cart');
+        $this->load->library('form_validation');
     }
 
     public function pesanan()
@@ -97,6 +98,4 @@ class Transaction extends CI_Controller
 
         redirect('home');
     }
-
-   
 }

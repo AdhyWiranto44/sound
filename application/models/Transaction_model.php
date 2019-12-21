@@ -20,7 +20,8 @@ class Transaction_model extends CI_Model
     return $item;
   }
 
-  public function getCartTotalUser() {
+  public function getCartTotalUser()
+  {
 
     $user = $this->session->userdata('email');
 
@@ -36,6 +37,7 @@ class Transaction_model extends CI_Model
   public function getTotal()
   {
     $allCart = $this->showAllCartItemByUser();
+    $data['kurir'] = $this->db->get('kurir')->result_array();
     $total = 0;
 
     foreach ($allCart as $i) {
