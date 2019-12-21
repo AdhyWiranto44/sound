@@ -1,12 +1,10 @@
-<footer class="mt-5">
-  <div class="container">
-    <div class="row border-top">
-      <div class="col">
-        <p class="text-center my-3">Copyright &copy; sound, Inc 2019</p>
-      </div>
+<div class="container-fluid bg-white">
+  <div class="row border-top">
+    <div class="col">
+      <p class="text-center my-3">Copyright &copy; sound, Inc 2019</p>
     </div>
   </div>
-</footer>
+</div>
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
