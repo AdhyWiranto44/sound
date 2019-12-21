@@ -56,21 +56,21 @@ class Auth extends CI_Controller
           if ($user['role_id'] == 1) {
             redirect('admin');
           } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Login Success<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Login Success<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
             <span aria-hidden="true">&times;</span>
             </button></div>');
             redirect('home');
           }
         } else {
-          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+          $this->session->set_flashdata('message', '<div class="alert alert-danger autoHide" role="alert">Wrong password!</div>');
           redirect('auth');
         }
       } else {
-        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not activated!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger autoHide" role="alert">Email is not activated!</div>');
         redirect('auth');
       }
     } else {
-      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-danger autoHide" role="alert">Email is not registered!</div>');
       redirect('auth');
     }
   }
@@ -111,7 +111,7 @@ class Auth extends CI_Controller
       ];
 
       $this->db->insert('user', $data);
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! Your account has been registered. Please login.</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Congratulation! Your account has been registered. Please login.</div>');
       redirect('auth');
     }
   }
@@ -121,7 +121,7 @@ class Auth extends CI_Controller
     $this->session->unset_userdata('email');
     $this->session->unset_userdata('role_id');
 
-    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out.</div>');
+    $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">You have been logged out.</div>');
     redirect('auth');
   }
 

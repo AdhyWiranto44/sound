@@ -58,7 +58,7 @@ class User extends CI_Controller
                     $this->db->set('image', $new_image);
                 } else {
                     // echo $this->upload->display_errors();
-                    $this->session->set_flashdata('message', "<div class='alert alert-danger' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+                    $this->session->set_flashdata('message', "<div class='alert alert-danger autoHide' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
                     redirect('user/edit');
                 }
             }
@@ -67,7 +67,7 @@ class User extends CI_Controller
             $this->db->where('email', $email);
             $this->db->update('user');
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Your profile has been updated!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Your profile has been updated!</div>');
             redirect('user');
         }
     }
@@ -91,11 +91,11 @@ class User extends CI_Controller
             $current_password = $this->input->post('current_password');
             $new_password = $this->input->post('new_password1');
             if (!password_verify($current_password, $data['user']['password'])) {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong current password!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger autoHide" role="alert">Wrong current password!</div>');
                 redirect('user/changepassword');
             } else {
                 if ($current_password == $new_password) {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Current password cannot be same as new password!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger autoHide" role="alert">Current password cannot be same as new password!</div>');
                     redirect('user/changepassword');
                 } else {
                     // password sudah oke
@@ -108,7 +108,7 @@ class User extends CI_Controller
                     $this->session->unset_userdata('email');
                     $this->session->unset_userdata('role_id');
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password changed! Please re-login.</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Password changed! Please re-login.</div>');
 
                     redirect('auth');
                 }
@@ -132,7 +132,7 @@ class User extends CI_Controller
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password telah di reset ke 12345, silahkan login kembali.</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Password telah di reset ke 12345, silahkan login kembali.</div>');
 
         redirect('auth');
     }

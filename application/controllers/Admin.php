@@ -71,6 +71,6 @@ class Admin extends CI_Controller
             $this->db->delete('user_access_menu', $data);
         }
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Access changed!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Access changed!</div>');
     }
 }

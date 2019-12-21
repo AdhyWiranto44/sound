@@ -132,7 +132,7 @@ class Products extends CI_Controller
 
       // $this->Products_model->tambahProduk($data, 'headset');
       $this->db->insert('headset', $data);
-      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
       redirect('products/dataHeadphones');
    }
@@ -158,7 +158,7 @@ class Products extends CI_Controller
             $upload_image = $this->upload->data('file_name');
             $this->db->set('gambar_produk', $upload_image);
          } else {
-            $this->session->set_flashdata('message', "<div class='alert alert-danger' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+            $this->session->set_flashdata('message', "<div class='alert alert-danger autoHide' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
             redirect('products/dataEarphones');
          }
       }
@@ -173,7 +173,7 @@ class Products extends CI_Controller
 
       // $this->Products_model->tambahProduk($data, 'headset');
       $this->db->insert('headset', $data);
-      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
       redirect('products/dataEarphones');
    }
@@ -183,7 +183,7 @@ class Products extends CI_Controller
    {
       $this->Products_model->hapusHeadphone($id);
 
-      $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
       redirect('products/dataHeadphones');
    }
@@ -191,8 +191,8 @@ class Products extends CI_Controller
    public function hapusEarphone($id)
    {
       $this->Products_model->hapusEarphone($id);
-      $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show autoHide" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
       redirect('products/dataEarphones');
    }
 
@@ -229,8 +229,8 @@ class Products extends CI_Controller
       );
 
       $this->Products_model->ubahProduk($where, $data, 'headset');
-      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
       redirect('products/dataHeadphones');
    }
 }
