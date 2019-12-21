@@ -8,7 +8,7 @@
 						<img class="card-img-top on-hover" src="<?= base_url('assets/products/headphone/') . $headphone['gambar_produk']; ?>" alt="Card image cap">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title"><a class="text-dark" href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>"><?= $headphone['nama_produk']; ?></a></h5>
+						<h5 class="card-title mb-0"><a class="text-dark" href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>"><?= $headphone['nama_produk']; ?></a></h5>
 
 						<p class="card-text">Rp <?= number_format($headphone['harga_produk']); ?>,-</p>
 						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded w-100">Buy</a>
