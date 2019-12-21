@@ -7,6 +7,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('Role_model', 'role');
     }
 
     public function index()
@@ -22,6 +23,20 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    // public function role()
+    // {
+    //     $data['title'] = 'Role';
+    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+    //     $data['role'] = $this->db->get('user_role')->result_array();
+
+    //     $this->load->view('templates/header', $data);
+    //     $this->load->view('templates/sidebar', $data);
+    //     $this->load->view('templates/topbar', $data);
+    //     $this->load->view('admin/role', $data);
+    //     $this->load->view('templates/footer');
+    // }
+
     public function role()
     {
         $data['title'] = 'Role';
@@ -29,11 +44,20 @@ class Admin extends CI_Controller
 
         $data['role'] = $this->db->get('user_role')->result_array();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('admin/role', $data);
-        $this->load->view('templates/footer');
+        $this->form_validation->set_rules('role', 'Role', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/role', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->role->addrole();
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New role added!</div>');
+            redirect('admin/role');
+        }
     }
 
     public function roleaccess($role_id)
