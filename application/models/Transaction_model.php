@@ -69,4 +69,9 @@ class Transaction_model extends CI_Model
     $this->db->where('id_headset', $id);
     $this->db->update('cart');
   }
+
+  public function deleteOneCartProduct($id)
+  {
+    $this->db->delete('cart', ['id_headset' => $id]);
+  }
 }

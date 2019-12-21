@@ -60,6 +60,7 @@
 								<th>Jumlah</th>
 								<th></th>
 								<th>Harga</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -80,6 +81,7 @@
 									<td>
 										<p><b>Rp <?= number_format($i['harga_produk']); ?>,-</b></p>
 									</td>
+									<td style="font-family: roboto;"><a href="<?= base_url('transaction/deleteonecartproduct/') . $i['id_headset']; ?>" class="badge badge-danger" style="font-family: roboto;">Cancel</a></td>
 								</tr>
 								<?php $j++; ?>
 							<?php endforeach; ?>

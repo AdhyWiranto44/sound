@@ -65,25 +65,8 @@ class Transaction extends CI_Controller
         }
     }
 
-    // public function Cart()
-    // {
-    //     $data['title'] = 'Shopping Cart';
-    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    //     $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
-    //     $data['item'] = $this->transaction->showAllCartItemByUser();
-    // }
-
     public function addToCart($id)
     {
-        // $data = [
-        //     'id_cart' => '',
-        //     'email_user' => $this->session->userdata('email'),
-        //     'id_headset' => $id,
-        //     'quantity' => 1
-        // ];
-
-        // $this->db->insert('cart', $data);
-
         $query = $this->db->get_where('cart', ['id_headset' => $id]);
 
         if ($query->num_rows() < 1) {
@@ -97,5 +80,11 @@ class Transaction extends CI_Controller
             </button></div>');
 
         redirect('home');
+    }
+
+    public function deleteOneCartProduct($id)
+    {
+        $this->transaction->deleteOneCartProduct($id);
+        redirect('transaction/pesanan');
     }
 }

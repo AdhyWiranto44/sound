@@ -2,13 +2,11 @@
 	<h3 class="d-inline my-3"><?= $title; ?></h3>
 	<div class="row mt-2">
 		<?php foreach ($headphones as $headphone) : ?>
-			<div class="col-sm-3 mb-2">
+			<div class="col-sm-6 col-md-4 col-lg-3 mb-2">
 				<div class="card mb-3">
-					<div class="gambarProduk">
-						<a href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>">
-							<img class="card-img-top on-hover" src="<?= base_url('assets/products/headphone/') . $headphone['gambar_produk']; ?>" alt="Card image cap">
-						</a>
-					</div>
+					<a href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>">
+						<img class="card-img-top on-hover" src="<?= base_url('assets/products/headphone/') . $headphone['gambar_produk']; ?>" alt="Card image cap">
+					</a>
 					<div class="card-body">
 						<h5 class="card-title"><a class="text-dark" href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>"><?= $headphone['nama_produk']; ?></a></h5>
 
