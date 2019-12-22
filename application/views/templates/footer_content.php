@@ -64,30 +64,62 @@
 <!-- Shopping Cart -->
 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <?php foreach($item as $it) : ?>
-      <div class="modal-body">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <a><img src="<?= base_url('assets/products/') . $it['tipe_produk'] . '/' . $it['gambar_produk']; ?>" alt="IMG"height="40" ><?= $it['nama_produk'] ; ?></a>
-            <br>
-            <a><?= $it['quantity'] ; ?> x</a>
-            <a>Rp <?= number_format($it['harga_produk']); ?>,-</a>
-          </li>
-        </ul>
-      </div>
-      <?php endforeach; ?>
-      <div class="modal-footer">
-        <button type="button">
-          <a class="btn btn-primary" href="<?= base_url('transaction/pesanan'); ?>">Checkout</a>
-          <a class="btn btn-primary" href="<?= base_url('products/detail') ;   ?>">Detail</a>
-        </button>
+    <div class="row">
+      <div class="col">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <h6>Daftar Pesanan</h6>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Gambar</th>
+                      <th>Nama Produk</th>
+                      <th>Jumlah</th>
+                      <th></th>
+                      <th>Harga</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $j = 1; ?>
+                    <?php foreach ($item as $i) : ?>
+                      <tr>
+                        <th scope="row"><?= $j; ?></th>
+                        <td><img class="d-inline border mr-2 mb-2" src="<?= base_url('assets/products/') . $i['tipe_produk'] . '/' . $i['gambar_produk']; ?>" style="height: 40px;"></td>
+                        <td>
+                          <h6 class="d-inline"><?= $i['nama_produk']; ?></h6>
+                        </td>
+                        <td>
+                          <p><b><?= $i['quantity']; ?></b></p>
+                        </td>
+                        <td>
+                          <p>x</p>
+                        </td>
+                        <td>
+                          <p><b>Rp <?= number_format($i['harga_produk']); ?>,-</b></p>
+                        </td>
+                        <td style="font-family: roboto;"><a href="<?= base_url('transaction/deleteonecartproduct/') . $i['id_headset']; ?>" class="badge badge-danger" style="font-family: roboto;">Cancel</a></td>
+                      </tr>
+                      <?php $j++; ?>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-warning" href="<?= base_url('transaction/pesanan'); ?>">Checkout</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

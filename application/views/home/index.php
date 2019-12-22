@@ -59,11 +59,7 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    
-=======
     <!-- end of Banner -->
->>>>>>> 6b5663a8cfb2a5c9cc6b932b9796642d06f16d80
 
   </div>
 </div>

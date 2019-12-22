@@ -22,7 +22,7 @@ class Transaction extends CI_Controller
         $data['item'] = $this->transaction->showAllCartItemByUser();
         $data['total'] = $this->transaction->getTotal();
 
-       
+
 
         $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
 

@@ -16,7 +16,9 @@
 
     <!-- <a class="text-dark mr-3" href="#" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
     <?php if ($this->session->userdata('email')) : ?>
-    <a class="text-dark mr-3 text-decoration-nonde" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a> 
+      <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+        <a class="text-dark mr-3 text-decoration-none" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span> <span class="badge badge-warning"><?= $count; ?></a>
+      <?php endif; ?>
 
       <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
       <div class="dropdown">
