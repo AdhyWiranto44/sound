@@ -9,6 +9,7 @@ class Transaction extends CI_Controller
         parent::__construct();
         $this->load->model('Transaction_model', 'transaction');
         $this->load->library('cart');
+        $this->load->library('form_validation');
     }
 
     public function pesanan()
@@ -42,7 +43,7 @@ class Transaction extends CI_Controller
     {
         $this->db->delete('cart', ['email_user' => $this->session->userdata('email')]);
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Transaction Success!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Transaction Success!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
             <span aria-hidden="true">&times;</span>
             </button></div>');
         redirect('home');
@@ -51,7 +52,7 @@ class Transaction extends CI_Controller
     public function buy($id)
     {
         if (!$this->session->userdata('email')) {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Login dahulu sebelum membeli. :)</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning autoHide" role="alert">Login dahulu sebelum membeli. :)</div>');
             redirect('auth');
         } else {
             $query = $this->db->get_where('cart', ['id_headset' => $id]);
@@ -66,25 +67,8 @@ class Transaction extends CI_Controller
         }
     }
 
-    // public function Cart()
-    // {
-    //     $data['title'] = 'Shopping Cart';
-    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    //     $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
-    //     $data['item'] = $this->transaction->showAllCartItemByUser();
-    // }
-
     public function addToCart($id)
     {
-        // $data = [
-        //     'id_cart' => '',
-        //     'email_user' => $this->session->userdata('email'),
-        //     'id_headset' => $id,
-        //     'quantity' => 1
-        // ];
-
-        // $this->db->insert('cart', $data);
-
         $query = $this->db->get_where('cart', ['id_headset' => $id]);
 
         if ($query->num_rows() < 1) {
@@ -93,12 +77,16 @@ class Transaction extends CI_Controller
             $this->transaction->changeCartQuantity($id);
         }
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Produk berhasil ditambahkan di cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Produk berhasil ditambahkan di cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
             <span aria-hidden="true">&times;</span>
             </button></div>');
 
         redirect('home');
     }
 
-   
+    public function deleteOneCartProduct($id)
+    {
+        $this->transaction->deleteOneCartProduct($id);
+        redirect('transaction/pesanan');
+    }
 }

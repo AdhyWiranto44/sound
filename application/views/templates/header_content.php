@@ -19,6 +19,6 @@
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <title><?= $title; ?></title>
-</head class="pagewrapping">
+</head>
 
-<body>
+<body id="container" class="bg-light">

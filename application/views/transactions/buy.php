@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 100px;">
 	<div class="row">
-		<div class="col">
+		<div class="col-md-12 col-lg-6 mb-3">
 			<div class="card">
 				<div class="card-body">
 					<form method="post" action="<?= base_url('transaction/konfirmasipesanan') ?>">
@@ -15,7 +15,7 @@
 						</div>
 						<div class="form-group">
 							<label for="kurir">Pilih Kurir</label>
-							<select class="form-control" id="" name="" style="font-family: Arial, Helvetica, sans-serif;">
+							<select class="form-control" id="kurir" name="kurir" style="font-family: Arial, Helvetica, sans-serif;">
 								<?php foreach ($kurir as $k) : ?>
 									<option value="<?= $k['id']; ?>" style="font-family: Arial, Helvetica, sans-serif;"><?= $k['nama_kurir']; ?>(Rp <?= number_format($k['biaya']); ?>,-)</option>
 								<?php endforeach; ?>
@@ -42,16 +42,16 @@
 								</label>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Confirm Order</button>
+						<button type="submit" class="btn btn-warning">Checkout</button>
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="col">
+		<div class="col-md-12 col-lg-6">
 			<div class="card">
 				<div class="card-body">
 					<h6>Daftar Pesanan</h6>
-					<table class="table">
+					<table class="table table-responsive">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -60,6 +60,7 @@
 								<th>Jumlah</th>
 								<th></th>
 								<th>Harga</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -80,6 +81,7 @@
 									<td>
 										<p><b>Rp <?= number_format($i['harga_produk']); ?>,-</b></p>
 									</td>
+									<td style="font-family: roboto;"><a href="<?= base_url('transaction/deleteonecartproduct/') . $i['id_headset']; ?>" class="badge badge-danger" style="font-family: roboto;">Cancel</a></td>
 								</tr>
 								<?php $j++; ?>
 							<?php endforeach; ?>

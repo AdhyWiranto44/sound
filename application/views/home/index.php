@@ -1,10 +1,10 @@
-<div class="row" style="margin-top: 50px;">
-  <div class="col-4 mt-3 mx-auto">
-    <?= $this->session->flashdata('message'); ?>
-  </div>
-</div>
-
 <div class="container">
+
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-4 mt-3 mx-auto">
+      <?= $this->session->flashdata('message'); ?>
+    </div>
+  </div>
 
   <!-- Jumbotron -->
   <div class="row mt-4 mr-0">
@@ -39,7 +39,7 @@
 
   <!-- Banner -->
   <div class="row my-4 mr-0">
-    <div class="col-sm mb-3">
+    <div class="col-md-6 mb-3">
       <div class="card text-white rounded-0 border-0">
         <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>headphones.png" alt="">
         <div class="card-img-overlay">
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm mb-3">
+    <div class="col-md-6 mb-3">
       <div class="card text-white rounded-0 border-0">
         <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>earphones.png" alt="">
         <div class="card-img-overlay">
@@ -59,6 +59,11 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     
+=======
+    <!-- end of Banner -->
+>>>>>>> 6b5663a8cfb2a5c9cc6b932b9796642d06f16d80
 
+  </div>
 </div>

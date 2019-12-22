@@ -39,6 +39,17 @@ p, li {
   filter: brightness(50%);
 }
 
+.alert {
+    animation: autoHide 0s ease-in 3s forwards;
+}
+
+@keyframes autoHide {
+    to {
+      visibility: hidden;
+      position: absolute;
+    }
+}
+
 @media (min-width: 768px) {
   .customMargin {
     margin-left: -120px;
@@ -47,11 +58,11 @@ p, li {
 
 @media (max-width: 768px) {
   * {
-  font-size: 20px;
+  font-size: 17px;
   }
 
   p {
     font-family: roboto;
-    font-size: 17px;
+    font-size: 14px;
   }
 }

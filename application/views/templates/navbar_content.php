@@ -10,14 +10,15 @@
       <a class="nav-item nav-link mr-3" href="<?= base_url('home'); ?>">Home</a>
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
       <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
-      <!-- <a class="nav-item nav-link mr-3" href="<?= base_url('products/brands'); ?>">Brands</a> -->
       <a class="nav-item nav-link mr-3" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
       <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a>
     </div>
 
+    <!-- <a class="text-dark mr-3" href="#" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
     <?php if ($this->session->userdata('email')) : ?>
-    <a class="text-dark mr-3" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a> 
-      
+<<<<<<< HEAD
+    <a class="text-dark mr-3 text-decoration-nonde" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a> 
+
       <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
       <div class="dropdown">
         <button class="bg-transparent border-0 text-light" data-toggle="dropdown">
@@ -32,7 +33,7 @@
           <hr class="border">
           <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Order</a>
           <hr class="border">
-          <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>
+          <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>
         </div>
       </div>
     <?php else : ?>
