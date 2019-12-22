@@ -42,7 +42,8 @@
 								</label>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-warning">Checkout</button>
+						<a class="btn btn-danger mr-2" href="<?= base_url('transaction/deleteallcartproduct'); ?>">Batal</a>
+						<button type="submit" class="btn btn-warning">Konfirmasi Pesanan</button>
 					</form>
 				</div>
 			</div>
