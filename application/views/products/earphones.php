@@ -1,4 +1,11 @@
 <div class="container" style="margin-top: 70px;">
+
+	<div class="row" style="margin-top: 50px;">
+		<div class="col-4 mt-3 mx-auto">
+			<?= $this->session->flashdata('message'); ?>
+		</div>
+	</div>
+
 	<h3 class="d-inline my-3"><?= $title; ?></h3>
 	<div class="row mt-2">
 		<?php foreach ($earphones as $earphone) : ?>

@@ -81,12 +81,12 @@ class Transaction extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button></div>');
 
-        redirect('home');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function deleteOneCartProduct($id)
     {
         $this->transaction->deleteOneCartProduct($id);
-        redirect('transaction/pesanan');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }

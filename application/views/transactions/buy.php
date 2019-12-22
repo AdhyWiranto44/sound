@@ -47,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-12 col-lg-6">
+		<div class="col-md-12 col-lg-6 mb-3">
 			<div class="card">
 				<div class="card-body">
 					<h6>Daftar Pesanan</h6>
