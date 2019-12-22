@@ -12,13 +12,9 @@
 						<h5 class="card-title mb-0"><a class="text-dark" href="<?= base_url('products/detail/') . $headphone['id_headset']; ?>"><?= $headphone['nama_produk']; ?></a></h5>
 
 						<p class="card-text">Rp <?= number_format($headphone['harga_produk']); ?>,-</p>
-<<<<<<< HEAD
 						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
 						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
-=======
-						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded w-100">Buy</a>
-						<a href="<?= base_url('transaction/addtocart/') . $headphone['id_headset']; ?>" class="btn btn-outline-warning rounded w-100">Add to cart</a>
->>>>>>> 6b5663a8cfb2a5c9cc6b932b9796642d06f16d80
+
 					</div>
 				</div>
 			</div>
