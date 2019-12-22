@@ -29,7 +29,7 @@
                     <button type="submit" class="btn btn-warning">Change Password</button>
                 </div>
                 <div class="form-group">
-                    <a href="<?= base_url('user/resetpassword'); ?>"><span class="btn badge badge-secondary">Forgot? Reset Password.</span></a>
+                    <a href="<?= base_url('user/resetpassword'); ?>" onclick="return confirm('Yakin ingin reset password?');"><span class="btn badge badge-secondary">Forgot? Reset Password.</span></a>
                 </div>
             </form>
         </div>

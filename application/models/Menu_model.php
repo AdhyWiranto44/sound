@@ -46,6 +46,7 @@ class Menu_model extends CI_Model
     $this->db->set('menu_id', $this->input->post('menu_id'));
     $this->db->set('url', $this->input->post('url'));
     $this->db->set('icon', $this->input->post('icon'));
+    $this->db->set('is_active', $this->input->post('is_active'));
     $this->db->where('id', $id);
     $this->db->update('user_sub_menu');
   }

@@ -5,7 +5,7 @@
     <?php echo $this->session->flashdata('message'); ?>
 
     <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Headphone</button>
-    <table class="table table-hover">
+    <table class="table table-hover table-responsive">
         <thead>
             <tr>
                 <th scope="col">#</th>
