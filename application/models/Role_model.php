@@ -7,4 +7,9 @@ class Role_model extends CI_Model
     {
         $this->db->insert('user_role', ['role' => $this->input->post('role')]);
     }
+
+    public function deleterole($id)
+    {
+        $this->db->delete('user_role', ['id' => $id]);
+    }
 }
