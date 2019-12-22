@@ -14,7 +14,7 @@
 
 						<p class="card-text">Rp <?= number_format($headphone['harga_produk']); ?>,-</p>
 						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-warning mb-2 rounded-0 w-100">Buy</a>
-						<a href="<?= base_url('transaction/addtocart/') . $headphone['id_headset']; ?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
+						<a href="<?= base_url('transaction/buy/') . $headphone['id_headset']; ?>" class="btn btn-outline-warning rounded-0 w-100">Add to cart</a>
 					</div>
 				</div>
 			</div>

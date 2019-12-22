@@ -63,6 +63,39 @@
   </div>
 </div>
 
+<!-- Shopping Cart -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <?php foreach($item as $it) : ?>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a><img src="<?= base_url('assets/products/') . $it['tipe_produk'] . '/' . $it['gambar_produk']; ?>" alt="IMG"height="40" ><?= $it['nama_produk'] ; ?></a>
+            <br>
+            <a><?= $it['quantity'] ; ?> x</a>
+            <a>Rp <?= number_format($it['harga_produk']); ?>,-</a>
+          </li>
+        </ul>
+      </div>
+      <?php endforeach; ?>
+      <div class="modal-footer">
+        <button type="button">
+          <a class="btn btn-primary" href="<?= base_url('transaction/pesanan'); ?>">Checkout</a>
+          <a class="btn btn-primary" href="<?= base_url('products/detail') ;   ?>">Detail</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="<?= base_url('assets/vendor/jquery/'); ?>jquery.js"></script>

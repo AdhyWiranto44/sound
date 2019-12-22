@@ -60,17 +60,5 @@
       </div>
     </div>
     
-    <!-- <div class="col-sm mb-3">
-      <div class="card text-white rounded-0 border-0">
-        <img class="card-img imgredup rounded-0" src="<?= base_url('assets/img/banner/'); ?>brands.png" alt="">
-        <div class="card-img-overlay">
-          <h4 class="card-title">Brands</h4>
-          <p class="card-text">Find your favorite brand</p>
-          <a class="text-white" href="<?= base_url('products/brands'); ?>">more ></a>
-        </div>
-      </div>
-    </div> -->
-  </div>
-  <!-- end of Banner -->
 
 </div>

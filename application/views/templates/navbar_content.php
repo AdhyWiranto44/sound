@@ -16,7 +16,8 @@
     </div>
 
     <?php if ($this->session->userdata('email')) : ?>
-      <a class="text-dark mr-3" href="#"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a>
+    <a class="text-dark mr-3" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span>Cart <span class="badge badge-light"><?= $count; ?></a> 
+      
       <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
       <div class="dropdown">
         <button class="bg-transparent border-0 text-light" data-toggle="dropdown">

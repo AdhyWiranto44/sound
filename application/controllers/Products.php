@@ -18,6 +18,7 @@ class Products extends CI_Controller
       $this->load->model("products_model");
       $data["headphones"] = $this->products_model->getHeadphones();
       $data["count"] = $this->transaction->getCartTotalUser();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -34,6 +35,7 @@ class Products extends CI_Controller
       $data["earphones"] = $this->products_model->getEarphones();
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['earphones'] = $this->products_model->getEarphones();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -46,6 +48,7 @@ class Products extends CI_Controller
       $data['title'] = 'Brands';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -59,6 +62,7 @@ class Products extends CI_Controller
       $data['detail'] = $this->Products_model->getProductById($id);
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -73,6 +77,7 @@ class Products extends CI_Controller
       $data['barang'] = $this->Products_model->getHeadphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -88,6 +93,7 @@ class Products extends CI_Controller
       $data['barang'] = $this->Products_model->getEarphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
+      $data['item'] = $this->transaction->showAllCartItemByUser();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
