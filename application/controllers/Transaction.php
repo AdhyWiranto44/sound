@@ -89,4 +89,14 @@ class Transaction extends CI_Controller
         $this->transaction->deleteOneCartProduct($id);
         redirect($_SERVER['HTTP_REFERER']);
     }
+
+    public function deleteAllCartProduct()
+    {
+        $this->transaction->deleteAllCartProduct();
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Semua pembelian produk dibatalkan!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 }

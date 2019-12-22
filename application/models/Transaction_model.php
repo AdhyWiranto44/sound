@@ -74,4 +74,11 @@ class Transaction_model extends CI_Model
   {
     $this->db->delete('cart', ['id_headset' => $id]);
   }
+
+  public function deleteAllCartProduct()
+  {
+    $user = $this->session->userdata('email');
+
+    $this->db->delete('cart', ['email_user' => $user]);
+  }
 }

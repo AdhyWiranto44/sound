@@ -117,6 +117,7 @@
             </div>
           </div>
           <div class="modal-footer">
+            <a class="btn btn-danger" href="<?= base_url('transaction/deleteallcartproduct'); ?>">Cancel All</a>
             <a class="btn btn-warning" href="<?= base_url('transaction/pesanan'); ?>">Checkout</a>
           </div>
         </div>
