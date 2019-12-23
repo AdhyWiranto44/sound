@@ -106,4 +106,27 @@ class Admin extends CI_Controller
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
         redirect('admin/role');
     }
+
+    public function editRole($id)
+    {
+        $data['title'] = 'Edit Role';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['role'] = $this->db->get_where('user_role', ['id' => $id])->row_array();
+
+        $this->form_validation->set_rules('role', 'Role', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/editrole', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->role->editRole($id);
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
+            redirect('admin/role');
+        }
+    }
 }
