@@ -29,7 +29,7 @@
               <td><?= $r['role']; ?></td>
               <td>
                 <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning">Access</a>
-                <a href="#" class="badge badge-success">Edit</a>
+                <a href="<?= base_url('admin/editrole/') . $r['id']; ?>" class="badge badge-success">Edit</a>
                 <a href="<?= base_url('admin/deleterole/') . $r['id']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin menghapus role?');">Delete</a>
 
               </td>

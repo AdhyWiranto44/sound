@@ -12,4 +12,11 @@ class Role_model extends CI_Model
     {
         $this->db->delete('user_role', ['id' => $id]);
     }
+
+    public function editRole($id)
+    {
+        $this->db->set('role', $this->input->post('role'));
+        $this->db->where('id', $id);
+        $this->db->update('user_role');
+    }
 }
