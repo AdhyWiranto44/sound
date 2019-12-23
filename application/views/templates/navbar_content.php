@@ -25,14 +25,16 @@
         <button class="bg-transparent border-0 text-light" data-toggle="dropdown">
           <img class="rounded-circle ml-2" src="<?= base_url('assets/img/profile/') . $user['image']; ?>" style="width: 2.2rem;">
         </button>
-        <div class="dropdown-menu customMargin">
+        <div class="dropdown-menu shadow-lg customMargin">
           <?php if ($this->session->userdata('role_id') == 1) : ?>
-            <a href="<?= base_url('admin'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">Dashboard</a>
+            <a href="<?= base_url('admin'); ?>" class="dropdown-item" style="border-radius: 0px;">Dashboard</a>
           <?php else : ?>
-            <a href="<?= base_url('user'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Profile</a>
+            <a href="<?= base_url('user'); ?>" class="dropdown-item" style="border-radius: 0px;">My Profile</a>
           <?php endif; ?>
-          <hr class="border">
-          <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item mb-3" style="border-radius: 0px;">My Order</a>
+          <?php if ($this->session->userdata('role_id') != 1) : ?>
+            <hr class="border">
+            <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item" style="border-radius: 0px;">My Order</a>
+          <?php endif; ?>
           <hr class="border">
           <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>
         </div>
