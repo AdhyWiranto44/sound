@@ -17,7 +17,7 @@
 
       <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target="#addSubmenuModal"><i class="fas fa-plus"></i> Add New Submenu</button>
 
-      <table class="table table-hover">
+      <table class="table table-hover table-responsive">
         <thead>
           <tr>
             <th scope="col">#</th>
