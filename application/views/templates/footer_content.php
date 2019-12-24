@@ -35,7 +35,9 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body" style="font-family: roboto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, eaque nisi in recusandae voluptatum nesciunt provident esse adipisci. Aliquid velit debitis ipsum neque aliquam blanditiis facere iure eius. Facere, fugiat!</div>
+      <div class="modal-body" style="font-family: roboto">
+        <p style="text-align: justify;">Sound merupakan situs belanja online terpercaya yang menjual beragam produk. Seiring berkembangnya teknologi, semakin banyak aktivitas yang dilakukan secara digital, lebih mudah dan praktis. Sarana jual beli online sound ini menyediakan berbagai macam produk headset, dengan tipe dan merk yang berbagai macam.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -55,6 +57,12 @@
         <ul class="list-group">
           <li class="list-group-item"><i class="fas fa-at"></i> : adhywiranto68@gmail.com</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 0819 1143 7177</li>
+          <li class="list-group-item"><i class="fas fa-at"></i> : alysayuandra2110@gmail.com</li>
+          <li class="list-group-item"><i class="fas fa-phone"></i> : 087780364646</li>
+          <li class="list-group-item"><i class="fas fa-at"></i> : lidyaislamiati04@gmail.com</li>
+          <li class="list-group-item"><i class="fas fa-phone"></i> : 083819500249</li>
+          <li class="list-group-item"><i class="fas fa-at"></i> : rico_173040052@mail.unpas.ac.id</li>
+          <li class="list-group-item"><i class="fas fa-phone"></i> : 081220872876</li>
         </ul>
       </div>
     </div>
