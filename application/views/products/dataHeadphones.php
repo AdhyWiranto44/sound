@@ -5,7 +5,7 @@
     <?php echo $this->session->flashdata('message'); ?>
 
     <button class="btn btn-warning mb-3" data-toggle="modal" data-target="#tambah_produk"><i class="fas fa-plus"></i> Add New Headphone</button>
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -29,7 +29,7 @@
                     <td><?= $b['merk_produk']; ?></td>
                     <td>Rp <?= number_format($b['harga_produk']); ?>,-</td>
                     <td>
-                        <a href="#" class="badge badge-success" data-toggle="modal" data-target="#ubahModal">Edit</a>
+                        <a href="<?= base_url(); ?>products/editHeadphone/<?= $b['id_headset']; ?>" class="badge badge-success">Edit</a>
                         <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#hapusModal">Delete</a>
                     </td>
                 </tr>
@@ -98,7 +98,7 @@
 </div>
 
 <!-- ubah Modal -->
-<div class="modal fade" id="ubahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="ubahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -133,4 +133,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->

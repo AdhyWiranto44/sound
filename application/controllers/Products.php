@@ -202,19 +202,21 @@ class Products extends CI_Controller
       redirect('products/dataEarphones');
    }
 
-   //edit headphone
-   public function editHeadphone($id)
+   //edit Earphone
+   public function editEarphone($id)
    {
+      $data['title'] = 'Ubah Earphone';
       $where  = array('id_headset' => $id);
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['barang'] = $this->Products_model->editProduk($where, 'headset')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
-      $this->load->view('products/dataHeadphones', $data);
+      $this->load->view('products/editEarphones', $data);
       $this->load->view('templates/footer');
    }
-   public function ubahHeadphone()
+   public function ubahEarphone()
    {
       $id = $this->input->post('id_headset');
       $nama_produk = $this->input->post('nama_produk');
@@ -237,6 +239,6 @@ class Products extends CI_Controller
       $this->Products_model->ubahProduk($where, $data, 'headset');
       $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
-      redirect('products/dataHeadphones');
+      redirect('products/dataEarphones');
    }
 }
