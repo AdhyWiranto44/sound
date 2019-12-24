@@ -241,4 +241,43 @@ class Products extends CI_Controller
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
       redirect('products/dataEarphones');
    }
+   //edit headphone
+   public function editHeadphone($id)
+   {
+      $data['title'] = 'Ubah Headphone';
+      $where  = array('id_headset' => $id);
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['barang'] = $this->Products_model->editProduk($where, 'headset')->result();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('products/editHeadphones', $data);
+      $this->load->view('templates/footer');
+   }
+   public function ubahHeadphone()
+   {
+      $id = $this->input->post('id_headset');
+      $nama_produk = $this->input->post('nama_produk');
+      $merk_produk = $this->input->post('merk_produk');
+      $harga_produk = $this->input->post('harga_produk');
+      $gambar_produk = $_FILES['gambar_produk']['name'];
+
+      $data = array(
+         'nama_produk' => $nama_produk,
+         'merk_produk' => $merk_produk,
+         'harga_produk' => $harga_produk,
+         // 'tipe_produk' => $tipe_produk,
+         'gambar_produk' => $gambar_produk
+      );
+
+      $where = array(
+         'id_headset' => $id
+      );
+
+      $this->Products_model->ubahProduk($where, $data, 'headset');
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
+      redirect('products/dataHeadphones');
+   }
 }
