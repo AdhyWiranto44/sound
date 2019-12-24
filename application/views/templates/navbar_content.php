@@ -6,21 +6,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav mx-auto">
-      <a class="nav-item nav-link mr-3" href="<?= base_url('home'); ?>">Home</a>
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
-      <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
-      <a class="nav-item nav-link mr-3" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
-      <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a>
-    </div>
+    <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+      <div class="navbar-nav mx-auto">
+        <a class="nav-item nav-link mr-3" href="<?= base_url('home'); ?>">Home</a>
+        <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>
+        <a class="nav-item nav-link mr-3" href="<?= base_url('products/earphones'); ?>">Earphones</a>
+        <a class="nav-item nav-link mr-3" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+        <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a>
+      </div>
+    <?php endif; ?>
 
-    <!-- <a class="text-dark mr-3" href="#" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
     <?php if ($this->session->userdata('email')) : ?>
-      <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+      <?php if (current_url() != base_url('transaction/pesanan') && $this->session->userdata('role_id') != 1) : ?>
         <a class="text-dark mr-3 text-decoration-none" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span> <span class="badge badge-warning"><?= $count; ?></a>
       <?php endif; ?>
 
-      <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
+      <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+        <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
+      <?php else : ?>
+        <p class="text-right small m-0 ml-auto">hello,<b><br><?= $user['name']; ?></b></p>
+      <?php endif; ?>
       <div class="dropdown">
         <button class="bg-transparent border-0 text-light" data-toggle="dropdown">
           <img class="rounded-circle ml-2" src="<?= base_url('assets/img/profile/') . $user['image']; ?>" style="width: 2.2rem;">
