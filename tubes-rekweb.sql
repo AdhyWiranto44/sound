@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2019 at 06:29 AM
+-- Generation Time: Dec 24, 2019 at 05:05 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -128,6 +128,17 @@ CREATE TABLE `pesanan` (
   `total_pesanan` int(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pesanan`
+--
+
+INSERT INTO `pesanan` (`id_pesanan`, `email_user`, `id_headset`, `quantity`, `alamat`, `no_telp`, `id_kurir`, `metode_pembayaran`, `total_pesanan`) VALUES
+(30, 'user@gmail.com', 13, 1, 'Bandung', '081911437177', 4, 'Mobile Banking', 1192000),
+(31, 'user@gmail.com', 4, 1, 'Bandung', '081911437177', 4, 'Mobile Banking', 1192000),
+(32, 'user@gmail.com', 14, 2, 'Bandung', '081911437177', 4, 'Mobile Banking', 1192000),
+(33, 'adhywiranto68@gmail.com', 6, 1, 'UNPAS Setiabudhi', '081911437177', 4, 'Internet Banking', 5833000),
+(34, 'adhywiranto68@gmail.com', 11, 1, 'UNPAS Setiabudhi', '081911437177', 4, 'Internet Banking', 5833000);
+
 -- --------------------------------------------------------
 
 --
@@ -152,11 +163,13 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (1, 'Alysa Yuandra', 'alysayuandra2110@gmail.com', 'default.jpg', '$2y$10$LE6DGyhFYTJ2N7n2ChMEyOiaMZmcqF5twrEQcKiAbmpQDdeZNfTX2', 2, 1, 1575083503),
 (2, 'Lidya Islamiati', 'lidya@gmail.com', 'default.jpg', '$2y$10$2d9oiYHUjnplUNzZseYbVOzJpsUIn3IDPybLD5.0wiaugBNJrHLKK', 2, 1, 1575084180),
-(4, 'Adhy', 'adhywiranto68@gmail.com', 'default.jpg', '$2y$10$xWwvkq8b3m6LuzX2B5qU6OFwQXv0K9n3dmW.mJlQKnnWOKYV3ryyi', 2, 1, 1575092497),
-(5, 'Adhy Wiranto Sudjana', 'adhy_173040038@mail.unpas.ac.id', 'default.jpg', '$2y$10$aXWEO3ansueleItXTcFxj.OKkXey1VPHxHO3NhMDeRdAP0Vrp0nVe', 1, 1, 1575281301),
-(6, 'Admin Kuy', 'admin@gmail.com', 'logounpas-baru.jpg', '$2y$10$vI0iu38lpDDitUUG.2dFbOc3FqC//jX9P95soyeAOdySrRNq4xM.K', 1, 1, 1575524889),
+(4, 'Adhy', 'adhywiranto68@gmail.com', 'photo_profile.jpg', '$2y$10$xWwvkq8b3m6LuzX2B5qU6OFwQXv0K9n3dmW.mJlQKnnWOKYV3ryyi', 2, 1, 1575092497),
+(5, 'Adhy Wiranto Sudjana', 'adhy_173040038@mail.unpas.ac.id', '173040038.jpg', '$2y$10$aXWEO3ansueleItXTcFxj.OKkXey1VPHxHO3NhMDeRdAP0Vrp0nVe', 1, 1, 1575281301),
+(6, 'Admin Kuy', 'admin@gmail.com', 'logounpas-baru.jpg', '$2y$10$yteY5VQwnr6fd.EJQ12ojusfMwLDA4/j6wtR3E1vmE2a8D.p0fxO.', 1, 1, 1575524889),
 (7, 'User', 'user@gmail.com', 'default.jpg', '$2y$10$Av72K8lKyt2S37JZtdScDezjraR99K.c/d2twoY7Bx1x390unBLqK', 2, 1, 1575524951),
-(8, 'Admin Baru', 'admin2@gmail.com', 'default.jpg', '$2y$10$6DJhgXFwK1qS9RQ2PY0K.u/HtonPA46LPLYXsIvbke1OwoeKmXzwC', 1, 1, 1576724865);
+(8, 'Admin Baru', 'admin2@gmail.com', 'default.jpg', '$2y$10$6DJhgXFwK1qS9RQ2PY0K.u/HtonPA46LPLYXsIvbke1OwoeKmXzwC', 1, 1, 1576724865),
+(9, 'uwu', 'uwu@gmail.com', 'default.jpg', '$2y$10$t7mMqP6rLdIhJUhTAgeUKerEhpN6lRUtbq.FdzautVLsKWGIMB3km', 2, 1, 1577153467),
+(10, 'twice', 'twice@gmail.com', 'default.jpg', '$2y$10$ItO4FTUCH198RV/S17ERQe7vMqpEN2abm.qiDnWBFDw5QjgPFLXi.', 1, 1, 1577153501);
 
 -- --------------------------------------------------------
 
@@ -180,7 +193,6 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (3, 2, 2),
 (4, 1, 3),
 (8, 1, 5),
-(9, 1, 6),
 (10, 2, 6);
 
 -- --------------------------------------------------------
@@ -336,7 +348,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `headset`
@@ -354,25 +366,25 @@ ALTER TABLE `kurir`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -395,12 +407,6 @@ ALTER TABLE `user_sub_menu`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_headset`) REFERENCES `headset` (`id_headset`);
-
---
--- Constraints for table `pesanan`
---
-ALTER TABLE `pesanan`
-  ADD CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`id_headset`) REFERENCES `cart` (`id_cart`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
