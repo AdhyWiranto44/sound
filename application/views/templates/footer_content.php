@@ -118,7 +118,7 @@
               </div>
               <div class="modal-footer">
                 <a class="btn btn-danger" href="<?= base_url('transaction/deleteallcartproduct'); ?>">Cancel All</a>
-                <a class="btn btn-warning" href="<?= base_url('transaction/pesanan'); ?>">Checkout</a>
+                <a class="btn btn-warning" href="<?= base_url('transaction'); ?>">Checkout</a>
               </div>
             <?php else : ?>
               <p class="text-center" style="font-family: roboto">Tidak ada item di cart!</p>

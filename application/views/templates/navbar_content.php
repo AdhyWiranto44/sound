@@ -17,11 +17,11 @@
     <?php endif; ?>
 
     <?php if ($this->session->userdata('email')) : ?>
-      <?php if (current_url() != base_url('transaction/pesanan') && $this->session->userdata('role_id') != 1) : ?>
+      <?php if (current_url() != base_url('transaction') && $this->session->userdata('role_id') != 1) : ?>
         <a class="text-dark mr-3 text-decoration-none" href="#" data-toggle="modal" data-target="#cartModal"><span class="fa fa-shopping-cart"></span> <span class="badge badge-warning"><?= $count; ?></a>
       <?php endif; ?>
 
-      <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+      <?php if (current_url() != base_url('transaction')) : ?>
         <p class="text-right small m-0">hello,<b><br><?= $user['name']; ?></b></p>
       <?php else : ?>
         <p class="text-right small m-0 ml-auto">hello,<b><br><?= $user['name']; ?></b></p>
@@ -38,7 +38,7 @@
           <?php endif; ?>
           <?php if ($this->session->userdata('role_id') != 1) : ?>
             <hr class="border">
-            <a href="<?= base_url('transaction/pesanan'); ?>" class="dropdown-item" style="border-radius: 0px;">My Order</a>
+            <a href="<?= base_url('transaction'); ?>" class="dropdown-item" style="border-radius: 0px;">My Order</a>
           <?php endif; ?>
           <hr class="border">
           <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logoutModal" style="border-radius: 0px;">Logout</a>

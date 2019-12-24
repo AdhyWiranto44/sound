@@ -12,7 +12,7 @@ class Transaction extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    public function pesanan()
+    public function index()
     {
         $data['title'] = 'Buy';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -63,7 +63,7 @@ class Transaction extends CI_Controller
                 $this->transaction->changeCartQuantity($id);
             }
 
-            redirect('transaction/pesanan');
+            redirect('transaction');
         }
     }
 
@@ -97,6 +97,6 @@ class Transaction extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button></div>');
 
-        redirect($_SERVER['HTTP_REFERER']);
+        redirect('home');
     }
 }
