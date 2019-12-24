@@ -37,7 +37,7 @@ class Transaction_model extends CI_Model
   public function getTotal()
   {
     $allCart = $this->showAllCartItemByUser();
-    $data['kurir'] = $this->db->get('kurir')->result_array();
+    // $kurir = $this->db->get('kurir')->result_array();
     $total = 0;
 
     foreach ($allCart as $i) {
@@ -45,6 +45,12 @@ class Transaction_model extends CI_Model
     }
 
     return $total;
+  }
+
+  public function getAllKurir()
+  {
+    $kurir = $this->db->get('kurir')->result_array();
+    return $kurir;
   }
 
   public function addToCart($id)
@@ -80,5 +86,36 @@ class Transaction_model extends CI_Model
     $user = $this->session->userdata('email');
 
     $this->db->delete('cart', ['email_user' => $user]);
+  }
+
+  public function checkout()
+  {
+    $allCart = $this->showAllCartItemByUser();
+    $total = $this->getTotal();
+    $selectedKurirId = $this->input->post('kurir');
+
+    $query = "SELECT * FROM kurir WHERE id = '$selectedKurirId'";
+    $queryBiaya = $this->db->query($query)->row_array();
+    $biaya = (int) $queryBiaya['biaya'];
+
+    $grandTotal =  $total + $biaya;
+
+    foreach ($allCart as $item) {
+      $data = [
+        'id_pesanan' => '',
+        'email_user' => $this->session->userdata('email'),
+        'id_headset' => $item['id_headset'],
+        'quantity' => $item['quantity'],
+        'alamat' => htmlspecialchars($this->input->post('alamat')),
+        'no_telp' => htmlspecialchars($this->input->post('telp')),
+        'id_kurir' => $selectedKurirId,
+        'metode_pembayaran' => $this->input->post('metode'),
+        'total_pesanan' => $grandTotal
+      ];
+
+      $this->db->insert('pesanan', $data);
+    }
+
+    $this->db->delete('cart', ['email_user' => $this->session->userdata('email')]);
   }
 }

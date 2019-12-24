@@ -16,12 +16,11 @@ class Transaction extends CI_Controller
     {
         $data['title'] = 'Buy';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['kurir'] = $this->db->get('kurir')->result_array();
+        $data['kurir'] = $this->transaction->getAllKurir();
         $data['list_order'] = $this->transaction->showAllCartItemByUser();
         $data["count"] = $this->transaction->getCartTotalUser();
         $data['item'] = $this->transaction->showAllCartItemByUser();
         $data['total'] = $this->transaction->getTotal();
-
 
 
         $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
@@ -39,13 +38,14 @@ class Transaction extends CI_Controller
         }
     }
 
-    public function konfirmasipesanan()
+    public function checkout()
     {
-        $this->db->delete('cart', ['email_user' => $this->session->userdata('email')]);
+        $this->transaction->checkout();
 
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Transaction Success!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
-            <span aria-hidden="true">&times;</span>
-            </button></div>');
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
+
         redirect('home');
     }
 
