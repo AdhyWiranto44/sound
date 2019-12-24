@@ -6,6 +6,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Products_model extends CI_Model
 {
+	public function getHeadphones()
+	{
+		$query = "SELECT * FROM headset
+					WHERE tipe_produk = 'Headphone'";
+
+		return $this->db->query($query)->result_array();
+	}
+
+	// pagination
+	public function getAllHeadphones($limit, $start)
+	{
+		$query = "SELECT * FROM headset
+					WHERE tipe_produk = 'Headphone'";
+
+		// return $this->db->query($query, $limit, $start)->result_array();
+		return $this->db->get('headset', $limit, $start)->result_array();
+	}
+
+	public function countAllHeadphones()
+	{
+		$query = "SELECT * FROM headset
+					WHERE tipe_produk = 'Headphone'";
+
+		return $this->db->query($query)->num_rows();
+	}
+
+	// end pagination
+
 	public function getEarphones()
 	{
 		$query = "SELECT * FROM headset
@@ -14,13 +42,25 @@ class Products_model extends CI_Model
 		return $this->db->query($query)->result_array();
 	}
 
-	public function getHeadphones()
+	// pagination
+	public function getAllEarphones($limit, $start)
 	{
 		$query = "SELECT * FROM headset
-					WHERE tipe_produk = 'Headphone'";
+					WHERE tipe_produk = 'Earphone'";
 
-		return $this->db->query($query)->result_array();
+		// return $this->db->query($query, $limit, $start)->result_array();
+		return $this->db->get('headset', $limit, $start)->result_array();
 	}
+
+	public function countAllEarphones()
+	{
+		$query = "SELECT * FROM headset
+		WHERE tipe_produk = 'Earphone'";
+
+		return $this->db->query($query)->num_rows();
+	}
+
+	// end pagination
 
 	public function getProductById($id)
 	{

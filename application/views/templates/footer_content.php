@@ -63,6 +63,8 @@
           <li class="list-group-item"><i class="fas fa-phone"></i> : 083819500249</li>
           <li class="list-group-item"><i class="fas fa-at"></i> : rico_173040052@mail.unpas.ac.id</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 081220872876</li>
+          <li class="list-group-item"><i class="fas fa-at"></i> : dzagie@gmail.com</li>
+          <li class="list-group-item"><i class="fas fa-phone"></i> : 081282585728</li>
         </ul>
       </div>
     </div>

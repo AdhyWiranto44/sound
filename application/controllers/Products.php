@@ -16,9 +16,48 @@ class Products extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
       $this->load->model("products_model");
-      $data["headphones"] = $this->products_model->getHeadphones();
+      $data["headphones"] = $this->products_model->getHeadphones();  
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['item'] = $this->transaction->showAllCartItemByUser();
+
+       // pagination
+       $config['base_url'] = 'http://localhost/tubesrekweb/sound/products/headphones';
+       $config['total_rows'] = $this->products_model->countAllHeadphones();
+       $config['per_page'] = 5;
+     
+       //styling
+       $config['full_tag_open'] = '<nav><ul class="pagination">';
+       $config['full_tag_close'] = '</ul></nav>';
+       
+       $config['first_link'] = 'First';
+       $config['first_tag_open'] = '<li class="page-item">';
+       $config['first_tag_close'] = '</li>';
+       
+       $config['last_link'] = 'Last';
+       $config['last_tag_open'] = '<li class="page-item">';
+       $config['last_tag_close'] = '</li>';
+       
+       $config['next_link'] = '&raquo';
+       $config['next_tag_open'] = '<li class="page-item">';
+       $config['next_tag_close'] = '</li>';
+             
+       $config['prev_link'] = '&laquo';
+       $config['prev_tag_open'] = '<li class="page-item">';
+       $config['prev_tag_close'] = '</li>';
+             
+       $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+       $config['cur_tag_close'] = '</a></li>';
+             
+       $config['num_tag_open'] = '<li class="page-item">';
+       $config['num_tag_close'] = '</li>';
+       
+       $config['attributes'] = array('class' => 'page-link');
+             
+       //initialize
+        $this->pagination->initialize($config);
+       
+        $data['start'] = $this->uri->segment(3);
+        $data["earphones"] = $this->products_model->getAllHeadphones($config['per_page'], $data['start']);
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -36,6 +75,45 @@ class Products extends CI_Controller
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['earphones'] = $this->products_model->getEarphones();
       $data['item'] = $this->transaction->showAllCartItemByUser();
+
+      // pagination
+      $config['base_url'] = 'http://localhost/tubesrekweb/sound/products/earphones';
+      $config['total_rows'] = $this->products_model->countAllEarphones();
+      $config['per_page'] = 5;
+    
+      //styling
+      $config['full_tag_open'] = '<nav><ul class="pagination">';
+      $config['full_tag_close'] = '</ul></nav>';
+      
+      $config['first_link'] = 'First';
+      $config['first_tag_open'] = '<li class="page-item">';
+      $config['first_tag_close'] = '</li>';
+      
+      $config['last_link'] = 'Last';
+      $config['last_tag_open'] = '<li class="page-item">';
+      $config['last_tag_close'] = '</li>';
+      
+      $config['next_link'] = '&raquo';
+      $config['next_tag_open'] = '<li class="page-item">';
+      $config['next_tag_close'] = '</li>';
+            
+      $config['prev_link'] = '&laquo';
+      $config['prev_tag_open'] = '<li class="page-item">';
+      $config['prev_tag_close'] = '</li>';
+            
+      $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+      $config['cur_tag_close'] = '</a></li>';
+            
+      $config['num_tag_open'] = '<li class="page-item">';
+      $config['num_tag_close'] = '</li>';
+      
+      $config['attributes'] = array('class' => 'page-link');
+            
+      //initialize
+       $this->pagination->initialize($config);
+      
+       $data['start'] = $this->uri->segment(3);
+       $data["earphones"] = $this->products_model->getAllEarphones($config['per_page'], $data['start']);
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
