@@ -26,7 +26,7 @@ class Products extends CI_Controller
        $config['per_page'] = 5;
      
        //styling
-       $config['full_tag_open'] = '<nav><ul class="pagination">';
+       $config['full_tag_open'] = '<nav><ul class="pagination  justify-content-center">';
        $config['full_tag_close'] = '</ul></nav>';
        
        $config['first_link'] = 'First';
@@ -54,10 +54,10 @@ class Products extends CI_Controller
        $config['attributes'] = array('class' => 'page-link');
              
        //initialize
-        $this->pagination->initialize($config);
+      $this->pagination->initialize($config);
        
-        $data['start'] = $this->uri->segment(3);
-        $data["earphones"] = $this->products_model->getAllHeadphones($config['per_page'], $data['start']);
+      $data['start'] = $this->uri->segment(3);
+      $data["headphones"] = $this->products_model->getAllHeadphones(5, 10);
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -82,7 +82,7 @@ class Products extends CI_Controller
       $config['per_page'] = 5;
     
       //styling
-      $config['full_tag_open'] = '<nav><ul class="pagination">';
+      $config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
       $config['full_tag_close'] = '</ul></nav>';
       
       $config['first_link'] = 'First';

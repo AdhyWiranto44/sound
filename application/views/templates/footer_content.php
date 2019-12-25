@@ -57,13 +57,21 @@
         <ul class="list-group">
           <li class="list-group-item"><i class="fas fa-at"></i> : adhywiranto68@gmail.com</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 0819 1143 7177</li>
+        </ul>
+        <ul class="list-group">
           <li class="list-group-item"><i class="fas fa-at"></i> : alysayuandra2110@gmail.com</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 087780364646</li>
+         </ul>
+        <ul class="list-group">
           <li class="list-group-item"><i class="fas fa-at"></i> : lidyaislamiati04@gmail.com</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 083819500249</li>
+        </ul>
+        <ul class="list-group">
           <li class="list-group-item"><i class="fas fa-at"></i> : rico_173040052@mail.unpas.ac.id</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 081220872876</li>
-          <li class="list-group-item"><i class="fas fa-at"></i> : dzagie@gmail.com</li>
+        </ul>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="fas fa-at"></i> : dzagie@mai.unpas.ac.id</li>
           <li class="list-group-item"><i class="fas fa-phone"></i> : 081282585728</li>
         </ul>
       </div>
