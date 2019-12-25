@@ -10,9 +10,10 @@
           <p class="card-text">Merk : <?= $detail['merk_produk']; ?></p>
           <p class="card-text">Tipe : <?= $detail['tipe_produk']; ?></p>
           <p class="card-text h3 ">Rp <?= number_format($detail['harga_produk']); ?>,-</p>
-
-          <a href="<?= base_url('transaction/buy/') . $detail['id_headset']; ?>" class="btn btn-warning mb-2 rounded w-100">Buy</a>
-          <a href="<?= base_url('Transaction/Cart') ?>" class="btn btn-outline-warning rounded w-100">Add to cart</a>
+          <?php if ($user['role_id'] != 1) { ?>
+            <a href="<?= base_url('transaction/buy/') . $detail['id_headset']; ?>" class="btn btn-warning mb-2 rounded w-100">Buy</a>
+            <a href="<?= base_url('Transaction/Cart') ?>" class="btn btn-outline-warning rounded w-100">Add to cart</a>
+          <?php } ?>
         </div>
       </div>
     </div>
