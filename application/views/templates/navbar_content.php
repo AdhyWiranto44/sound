@@ -6,7 +6,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <?php if (current_url() != base_url('transaction/pesanan')) : ?>
+    <?php if (current_url() != base_url('transaction')) : ?>
       <div class="navbar-nav mx-auto">
         <a class="nav-item nav-link mr-3" href="<?= base_url('home'); ?>">Home</a>
         <a class="nav-item nav-link mr-3" href="<?= base_url('products/headphones'); ?>">Headphones</a>

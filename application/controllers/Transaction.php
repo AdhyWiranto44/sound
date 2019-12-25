@@ -23,18 +23,22 @@ class Transaction extends CI_Controller
         $data['total'] = $this->transaction->getTotal();
 
 
-        $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
+        if ($this->session->userdata('role_id') != 1) {
+            $query = $this->db->get_where('cart', ['email_user' => $this->session->userdata('email')]);
 
-        if ($query->num_rows() < 1) {
-            $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible fade show" role="alert">There is no item in your cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
-            <span aria-hidden="true">&times;</span>
-            </button></div>');
-            redirect('home');
+            if ($query->num_rows() < 1) {
+                $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible fade show" role="alert">There is no item in your cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+                <span aria-hidden="true">&times;</span>
+                </button></div>');
+                redirect('home');
+            } else {
+                $this->load->view('templates/header_content', $data);
+                $this->load->view('templates/navbar_content', $data);
+                $this->load->view('transactions/buy', $data);
+                $this->load->view('templates/footer_content');
+            }
         } else {
-            $this->load->view('templates/header_content', $data);
-            $this->load->view('templates/navbar_content', $data);
-            $this->load->view('transactions/buy', $data);
-            $this->load->view('templates/footer_content');
+            redirect('auth/blocked');
         }
     }
 
@@ -69,19 +73,27 @@ class Transaction extends CI_Controller
 
     public function addToCart($id)
     {
-        $query = $this->db->get_where('cart', ['id_headset' => $id]);
+        if ($this->session->userdata('role_id') != 1) {
+            $query = $this->db->get_where('cart', ['id_headset' => $id]);
 
-        if ($query->num_rows() < 1) {
-            $this->transaction->addToCart($id);
+            if ($query->num_rows() < 1) {
+                $this->transaction->addToCart($id);
+            } else {
+                $this->transaction->changeCartQuantity($id);
+            }
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Produk berhasil ditambahkan di cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+                <span aria-hidden="true">&times;</span>
+                </button></div>');
+
+            redirect($_SERVER['HTTP_REFERER']);
         } else {
-            $this->transaction->changeCartQuantity($id);
-        }
-
-        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Produk berhasil ditambahkan di cart!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">Admin tidak boleh membeli barangnya sendiri!<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-family: arial;">
             <span aria-hidden="true">&times;</span>
             </button></div>');
 
-        redirect($_SERVER['HTTP_REFERER']);
+            redirect('home');
+        }
     }
 
     public function deleteOneCartProduct($id)
