@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2019 at 05:05 AM
+-- Generation Time: Dec 25, 2019 at 08:02 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -137,7 +137,8 @@ INSERT INTO `pesanan` (`id_pesanan`, `email_user`, `id_headset`, `quantity`, `al
 (31, 'user@gmail.com', 4, 1, 'Bandung', '081911437177', 4, 'Mobile Banking', 1192000),
 (32, 'user@gmail.com', 14, 2, 'Bandung', '081911437177', 4, 'Mobile Banking', 1192000),
 (33, 'adhywiranto68@gmail.com', 6, 1, 'UNPAS Setiabudhi', '081911437177', 4, 'Internet Banking', 5833000),
-(34, 'adhywiranto68@gmail.com', 11, 1, 'UNPAS Setiabudhi', '081911437177', 4, 'Internet Banking', 5833000);
+(34, 'adhywiranto68@gmail.com', 11, 1, 'UNPAS Setiabudhi', '081911437177', 4, 'Internet Banking', 5833000),
+(35, 'user@gmail.com', 12, 1, 'fddghgjbfdfg', '123123', 2, 'Internet Banking', 4207000);
 
 -- --------------------------------------------------------
 
@@ -169,7 +170,9 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (7, 'User', 'user@gmail.com', 'default.jpg', '$2y$10$Av72K8lKyt2S37JZtdScDezjraR99K.c/d2twoY7Bx1x390unBLqK', 2, 1, 1575524951),
 (8, 'Admin Baru', 'admin2@gmail.com', 'default.jpg', '$2y$10$6DJhgXFwK1qS9RQ2PY0K.u/HtonPA46LPLYXsIvbke1OwoeKmXzwC', 1, 1, 1576724865),
 (9, 'uwu', 'uwu@gmail.com', 'default.jpg', '$2y$10$t7mMqP6rLdIhJUhTAgeUKerEhpN6lRUtbq.FdzautVLsKWGIMB3km', 2, 1, 1577153467),
-(10, 'twice', 'twice@gmail.com', 'default.jpg', '$2y$10$ItO4FTUCH198RV/S17ERQe7vMqpEN2abm.qiDnWBFDw5QjgPFLXi.', 1, 1, 1577153501);
+(10, 'twice', 'twice@gmail.com', 'default.jpg', '$2y$10$ItO4FTUCH198RV/S17ERQe7vMqpEN2abm.qiDnWBFDw5QjgPFLXi.', 1, 1, 1577153501),
+(11, 'Diki', 'diki@gM.COM', 'default.jpg', '$2y$10$VJtAN5sm0iJ.nvtQUENkBepzFH/hXczXiXkw27ZEpR.wvUIcdl6DG', 1, 1, 1577254709),
+(12, 'diki', 'diki@gmail.com', 'default.jpg', '$2y$10$SHWvJsJalpYPy1oHvpu4D.4nllREEeSpyiCsECQ3wqP0E0ttko5UO', 1, 1, 1577254784);
 
 -- --------------------------------------------------------
 
@@ -348,7 +351,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `headset`
@@ -366,13 +369,13 @@ ALTER TABLE `kurir`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
