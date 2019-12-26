@@ -45,8 +45,8 @@
         </div>
       </div>
     <?php else : ?>
-      <a class="btn btn-secondary mr-2" style="width: 75px;" href="<?= base_url('auth/index'); ?>" role="button">Login</a>
-      <a class="btn btn-outline-secondary" style="width: 75px;" href="<?= base_url('auth/registration'); ?>" role="button">Register</a>
+      <a class="btn btn-warning mr-2" style="width: 75px;" href="<?= base_url('auth/index'); ?>" role="button">Login</a>
+      <a class="btn btn-outline-warning" style="width: 75px;" href="<?= base_url('auth/registration'); ?>" role="button">Register</a>
     <?php endif; ?>
 
 

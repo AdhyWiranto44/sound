@@ -6,7 +6,7 @@ class Products extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('Products_model');
+      $this->load->model('products_model', 'products');
       $this->load->model('transaction_model', 'transaction');
    }
 
@@ -15,14 +15,13 @@ class Products extends CI_Controller
       $data['title'] = 'Headphones';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-      $this->load->model("products_model");
-      $data["headphones"] = $this->products_model->getHeadphones();
+      $data["headphones"] = $this->products->getHeadphones();
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['item'] = $this->transaction->showAllCartItemByUser();
 
       // pagination
       $config['base_url'] = 'http://localhost/tubesrekweb/sound/products/headphones';
-      $config['total_rows'] = $this->products_model->countAllHeadphones();
+      $config['total_rows'] = $this->products->countAllHeadphones();
       $config['per_page'] = 5;
 
       //styling
@@ -57,7 +56,7 @@ class Products extends CI_Controller
       $this->pagination->initialize($config);
 
       $data['start'] = $this->uri->segment(3);
-      $data["headphones"] = $this->products_model->getAllHeadphones(5, 10);
+      $data["headphones"] = $this->products->getAllHeadphones(5, 10);
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -70,15 +69,14 @@ class Products extends CI_Controller
       $data['title'] = 'Earphones';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-      $this->load->model("products_model");
-      $data["earphones"] = $this->products_model->getEarphones();
+      $data["earphones"] = $this->products->getEarphones();
       $data["count"] = $this->transaction->getCartTotalUser();
-      $data['earphones'] = $this->products_model->getEarphones();
+      $data['earphones'] = $this->products->getEarphones();
       $data['item'] = $this->transaction->showAllCartItemByUser();
 
       // pagination
       $config['base_url'] = 'http://localhost/tubesrekweb/sound/products/earphones';
-      $config['total_rows'] = $this->products_model->countAllEarphones();
+      $config['total_rows'] = $this->products->countAllEarphones();
       $config['per_page'] = 5;
 
       //styling
@@ -113,7 +111,7 @@ class Products extends CI_Controller
       $this->pagination->initialize($config);
 
       $data['start'] = $this->uri->segment(3);
-      $data["earphones"] = $this->products_model->getAllEarphones($config['per_page'], $data['start']);
+      $data["earphones"] = $this->products->getAllEarphones($config['per_page'], $data['start']);
 
       $this->load->view('templates/header_content', $data);
       $this->load->view('templates/navbar_content', $data);
@@ -121,23 +119,23 @@ class Products extends CI_Controller
       $this->load->view('templates/footer_content');
    }
 
-   public function brands()
-   {
-      $data['title'] = 'Brands';
-      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-      $data["count"] = $this->transaction->getCartTotalUser();
-      $data['item'] = $this->transaction->showAllCartItemByUser();
+   // public function brands()
+   // {
+   //    $data['title'] = 'Brands';
+   //    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+   //    $data["count"] = $this->transaction->getCartTotalUser();
+   //    $data['item'] = $this->transaction->showAllCartItemByUser();
 
-      $this->load->view('templates/header_content', $data);
-      $this->load->view('templates/navbar_content', $data);
-      $this->load->view('products/brands', $data);
-      $this->load->view('templates/footer_content');
-   }
+   //    $this->load->view('templates/header_content', $data);
+   //    $this->load->view('templates/navbar_content', $data);
+   //    $this->load->view('products/brands', $data);
+   //    $this->load->view('templates/footer_content');
+   // }
 
    public function detail($id)
    {
       $data['title'] = 'Detail';
-      $data['detail'] = $this->Products_model->getProductById($id);
+      $data['detail'] = $this->products->getProductById($id);
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['item'] = $this->transaction->showAllCartItemByUser();
@@ -152,7 +150,7 @@ class Products extends CI_Controller
    {
       is_logged_in();
       $data['title'] = 'Data Headphones';
-      $data['barang'] = $this->Products_model->getHeadphones();
+      $data['barang'] = $this->products->getHeadphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['item'] = $this->transaction->showAllCartItemByUser();
@@ -168,7 +166,7 @@ class Products extends CI_Controller
    {
       is_logged_in();
       $data['title'] = 'Data Earphones';
-      $data['barang'] = $this->Products_model->getEarphones();
+      $data['barang'] = $this->products->getEarphones();
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data["count"] = $this->transaction->getCartTotalUser();
       $data['item'] = $this->transaction->showAllCartItemByUser();
@@ -214,7 +212,7 @@ class Products extends CI_Controller
          'gambar_produk' => $gambar_produk
       ];
 
-      // $this->Products_model->tambahProduk($data, 'headset');
+      // $this->products->tambahProduk($data, 'headset');
       $this->db->insert('headset', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
@@ -255,7 +253,7 @@ class Products extends CI_Controller
          'gambar_produk' => $gambar_produk
       ];
 
-      // $this->Products_model->tambahProduk($data, 'headset');
+      // $this->products->tambahProduk($data, 'headset');
       $this->db->insert('headset', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Ditambahkan!</div>');
@@ -265,7 +263,7 @@ class Products extends CI_Controller
    //menghapus produk Headphone
    public function hapusHeadphone($id)
    {
-      $this->Products_model->hapusHeadphone($id);
+      $this->products->hapusHeadphone($id);
 
       $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
@@ -274,7 +272,7 @@ class Products extends CI_Controller
    //menghapus produk earphone
    public function hapusEarphone($id)
    {
-      $this->Products_model->hapusEarphone($id);
+      $this->products->hapusEarphone($id);
       $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show autoHide" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Dihapus!</div>');
       redirect('products/dataEarphones');
@@ -283,79 +281,111 @@ class Products extends CI_Controller
    //edit Earphone
    public function editEarphone($id)
    {
-      $data['title'] = 'Ubah Earphone';
-      $where  = array('id_headset' => $id);
+      $data['title'] = 'Edit Earphone';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-      $data['barang'] = $this->Products_model->editProduk($where, 'headset')->result();
+      $data['earphone'] = $this->products->getProductById($id);
 
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/sidebar', $data);
-      $this->load->view('templates/topbar', $data);
-      $this->load->view('products/editEarphones', $data);
-      $this->load->view('templates/footer');
-   }
-   public function ubahEarphone()
-   {
-      $id = $this->input->post('id_headset');
-      $nama_produk = $this->input->post('nama_produk');
-      $merk_produk = $this->input->post('merk_produk');
-      $harga_produk = $this->input->post('harga_produk');
-      $gambar_produk = $_FILES['gambar_produk']['name'];
+      $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required|trim');
+      $this->form_validation->set_rules('merk_produk', 'Merk Produk', 'required|trim');
+      $this->form_validation->set_rules('harga_produk', 'Harga Produk', 'required|trim');
 
-      $data = array(
-         'nama_produk' => $nama_produk,
-         'merk_produk' => $merk_produk,
-         'harga_produk' => $harga_produk,
-         // 'tipe_produk' => $tipe_produk,
-         'gambar_produk' => $gambar_produk
-      );
+      if ($this->form_validation->run() == false) {
+         $this->load->view('templates/header', $data);
+         $this->load->view('templates/sidebar', $data);
+         $this->load->view('templates/topbar', $data);
+         $this->load->view('products/editEarphone', $data);
+         $this->load->view('templates/footer');
+      } else {
+         $nama_produk = $this->input->post('nama_produk');
+         $merk_produk = $this->input->post('merk_produk');
+         $harga_produk = $this->input->post('harga_produk');
 
-      $where = array(
-         'id_headset' => $id
-      );
+         // cek jika ada gambar yang akan diupload
+         $upload_image = $_FILES['image']['name'];
 
-      $this->Products_model->ubahProduk($where, $data, 'headset');
-      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
-      redirect('products/dataEarphones');
+         if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
+            $config['max_size'] = '8192'; // in kb
+            $config['upload_path'] = './assets/products/earphone';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+               $old_image = $data['earphone']['gambar_produk'];
+               if ($old_image != $upload_image) {
+                  unlink(FCPATH . 'assets/products/earphone/' . $old_image);
+               }
+               $new_image = $this->upload->data('file_name');
+               $this->db->set('gambar_produk', $new_image);
+            } else {
+               $this->session->set_flashdata('message', "<div class='alert alert-danger autoHide' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+               redirect('products/dataEarphones');
+            }
+         }
+
+         $this->db->set('nama_produk', $nama_produk);
+         $this->db->set('merk_produk', $merk_produk);
+         $this->db->set('harga_produk', $harga_produk);
+         $this->db->where('id_headset', $id);
+         $this->db->update('headset');
+
+         $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Data headset berhasil diubah!</div>');
+         redirect('products/dataEarphones');
+      }
    }
    //edit headphone
    public function editHeadphone($id)
    {
-      $data['title'] = 'Ubah Headphone';
-      $where  = array('id_headset' => $id);
+      $data['title'] = 'Edit Headphone';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-      $data['barang'] = $this->Products_model->editProduk($where, 'headset')->result();
+      $data['headphone'] = $this->products->getProductById($id);
 
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/sidebar', $data);
-      $this->load->view('templates/topbar', $data);
-      $this->load->view('products/editHeadphones', $data);
-      $this->load->view('templates/footer');
-   }
-   public function ubahHeadphone()
-   {
-      $id = $this->input->post('id_headset');
-      $nama_produk = $this->input->post('nama_produk');
-      $merk_produk = $this->input->post('merk_produk');
-      $harga_produk = $this->input->post('harga_produk');
-      $gambar_produk = $_FILES['gambar_produk']['name'];
+      $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required|trim');
+      $this->form_validation->set_rules('merk_produk', 'Merk Produk', 'required|trim');
+      $this->form_validation->set_rules('harga_produk', 'Harga Produk', 'required|trim');
 
-      $data = array(
-         'nama_produk' => $nama_produk,
-         'merk_produk' => $merk_produk,
-         'harga_produk' => $harga_produk,
-         // 'tipe_produk' => $tipe_produk,
-         'gambar_produk' => $gambar_produk
-      );
+      if ($this->form_validation->run() == false) {
+         $this->load->view('templates/header', $data);
+         $this->load->view('templates/sidebar', $data);
+         $this->load->view('templates/topbar', $data);
+         $this->load->view('products/editHeadphone', $data);
+         $this->load->view('templates/footer');
+      } else {
+         $nama_produk = $this->input->post('nama_produk');
+         $merk_produk = $this->input->post('merk_produk');
+         $harga_produk = $this->input->post('harga_produk');
 
-      $where = array(
-         'id_headset' => $id
-      );
+         // cek jika ada gambar yang akan diupload
+         $upload_image = $_FILES['image']['name'];
 
-      $this->Products_model->ubahProduk($where, $data, 'headset');
-      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show autoHide" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Berhasil Diubah!</div>');
-      redirect('products/dataHeadphones');
+         if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
+            $config['max_size'] = '8192'; // in kb
+            $config['upload_path'] = './assets/products/headphone';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+               $old_image = $data['headphone']['gambar_produk'];
+               if ($old_image != $upload_image) {
+                  unlink(FCPATH . 'assets/products/headphone/' . $old_image);
+               }
+               $new_image = $this->upload->data('file_name');
+               $this->db->set('gambar_produk', $new_image);
+            } else {
+               $this->session->set_flashdata('message', "<div class='alert alert-danger autoHide' role='alert'>Wrong image format! </br>Allowed format: gif\jpg\jpeg\png </br>max size: 8 Mb</div>");
+               redirect('products/dataHeadphones');
+            }
+         }
+
+         $this->db->set('nama_produk', $nama_produk);
+         $this->db->set('merk_produk', $merk_produk);
+         $this->db->set('harga_produk', $harga_produk);
+         $this->db->where('id_headset', $id);
+         $this->db->update('headset');
+
+         $this->session->set_flashdata('message', '<div class="alert alert-success autoHide" role="alert">Data headset berhasil diubah!</div>');
+         redirect('products/dataHeadphones');
+      }
    }
 }
